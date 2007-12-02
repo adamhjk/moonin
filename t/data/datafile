@@ -1,0 +1,1569 @@
+version 1.2.5
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_title Inode table usage
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.used.label open inodes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.max.info The size of the system inode table. This is dynamically adjusted by the kernel.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_order used max
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.used.info The number of currently open inodes.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_vlabel number of open inodes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.max.label inode table size
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_inodes.graph_info This graph monitors the Linux open inode table.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.graph_title Individual interrupts
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iNMI.label NMI
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i9.label acpi
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i18.info Interrupt 18, for device(s): uhci_hcd:usb3
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iMIS.label MIS
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i8.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iNMI.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i9.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i9.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i19.label eth0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i18.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i17.label ehci_hcd:usb1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i8.label rtc
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i6.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i1.info Interrupt 1, for device(s): i8042
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iERR.label ERR
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i12.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i6.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i1.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i17.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iNMI.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iERR.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i15.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i14.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i0.label timer
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i8.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i1.label i8042
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i14.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i6.label floppy
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i16.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i20.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i14.label libata
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i12.label i8042
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i20.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iLOC.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i6.info Interrupt 6, for device(s): floppy
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i15.label libata
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.graph_order i0 i1 i6 i8 i9 i12 i14 i15 i16 i17 i18 i19 i20 i21 iNMI iLOC iERR iMIS
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i1.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i20.label 3w-xxxx
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i0.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i17.info Interrupt 17, for device(s): ehci_hcd:usb1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i16.label uhci_hcd:usb2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i16.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i18.label uhci_hcd:usb3
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i20.info Interrupt 20, for device(s): 3w-xxxx
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iLOC.label LOC
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i9.info Interrupt 9, for device(s): acpi
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i21.label eth1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i16.info Interrupt 16, for device(s): uhci_hcd:usb2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i15.info Interrupt 15, for device(s): libata
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i19.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iERR.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i0.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i18.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.graph_vlabel interrupts / ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iMIS.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i19.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i21.info Interrupt 21, for device(s): eth1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i8.info Interrupt 8, for device(s): rtc
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iLOC.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i14.info Interrupt 14, for device(s): libata
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i17.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i12.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i15.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i0.info Interrupt 0, for device(s): timer
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.graph_args --base 1000 -l 0;
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.iMIS.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i19.info Interrupt 19, for device(s): eth0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i12.info Interrupt 12, for device(s): i8042
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i21.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:irqstats.i21.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_title eth0 traffic
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.max 100000000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.label bps
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.down.cdef down,8,*
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.down.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_info This graph shows the traffic of the eth0 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.down.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.info Traffic of the eth0 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.cdef up,8,*
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_order down up
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.down.label received
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.down.max 100000000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth0.up.negative down
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_title Filesystem usage (in %)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.procbususb.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varlock_var_lock.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df._dev_sda1.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varrun_var_run.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_category disk
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varlock_var_lock.label /var/lock
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.devshm_dev_shm.label /dev/shm
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_info This graph shows disk usage on the machine.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.devshm_dev_shm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df._dev_sda1.label /
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df._dev_sda1.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.devshm_dev_shm.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.udev_dev.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varlock_var_lock.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varrun_var_run.label /var/run
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.udev_dev.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df._dev_sda1.info / (ext3) -> /dev/sda1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_order _dev_sda1 devshm_dev_shm procbususb udev_dev varlock_var_lock varrun_var_run
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.procbususb.label /proc/bus/usb
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varrun_var_run.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.procbususb.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varlock_var_lock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.graph_vlabel %
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.varrun_var_run.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.devshm_dev_shm.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.udev_dev.label /dev
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df.udev_dev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.graph_title Swap in/out
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_out.label swap
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_out.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_in.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_out.negative swap_in
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.graph_args -l 0 --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_out.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.graph_order swap_in swap_out
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_in.label swap
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_in.max 100000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_in.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.graph_vlabel pages per ${graph_period} in (-) / out (+)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_out.max 100000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:swap.swap_in.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_title Load average
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.load.warning 10
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_scale no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.load.critical 120
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_order load
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_vlabel load
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.graph_info The load average of the machine describes how many processes are in the run-queue (scheduled to run "immediately").
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.load.info Average load for the five minutes.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:load.load.label load
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_title CPU usage
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.info Idle CPU time
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.warning 320
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.info CPU time spent handling "batched" interrupts
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.label system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.info CPU time spent handling interrupts
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.info CPU time spent by the kernel in system activities
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.warning 120
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_vlabel %
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.info CPU time spent waiting for I/O operations to finish
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.critical 200
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_period second
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.info CPU time spent by nice(1)d programs
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_info This graph shows how CPU time is spent.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.label iowait
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.max 5000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.system.draw AREA
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.label irq
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_scale no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_args --base 1000 -r --lower-limit 0 --upper-limit 400
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.graph_order system user nice idle iowait irq softirq
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.label user
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.label nice
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.user.info CPU time spent by normal programs and daemons
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.irq.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.iowait.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.nice.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.softirq.label softirq
+test.hjksolutions.com;app1prod.test.hjksolutions.com:cpu.idle.label idle
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_title Inode usage (in %)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.devshm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.procbususb.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varlock.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.udev.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode._dev_sda1.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_category disk
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varrun.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varrun.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varlock.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varlock.label /var/lock
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_info This graph shows the inode usage for the partitions of types that use inodes.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode._dev_sda1.label /
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode._dev_sda1.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.devshm.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.udev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varrun.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode._dev_sda1.info / (ext3) -> /dev/sda1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_order _dev_sda1 devshm procbususb udev varlock varrun
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.procbususb.label /proc/bus/usb
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.devshm.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.procbususb.warning 92
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.graph_vlabel %
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.udev.critical 98
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.devshm.label /dev/shm
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.udev.label /dev
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varlock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;app1prod.test.hjksolutions.com:df_inode.varrun.label /var/run
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_title Postgres queries on template1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx.label i_selects
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.deletes.info Rows deleted from all tables
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_category Postgresql
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq_rows.label s_select rows
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.inserts.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx_rows.label i_select rows
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx_rows.info Rows returned form index selects
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.updates.label updates
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx_rows.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq.info Sequential selects on all tables
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq_rows.info Rows returned from sequential selects
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.deletes.label deletes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_vlabel Queries per ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.inserts.info Rows inserted on all tables
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_idx.info Sequential selects on all indexes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq_rows.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq.label s_selects
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_info Shows number of select, insert, update and delete queries
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.inserts.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.updates.info Rows updated on all tables
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.updates.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.graph_order sel_seq sel_seq_rows sel_idx sel_idx_rows inserts updates deletes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.deletes.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.sel_seq_rows.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.deletes.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.inserts.label inserts
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_queries_template1.updates.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_title IOstat
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.label sda
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_category disk
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_read.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_info This graph shows the I/O to and from block devices.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_read.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.max 900000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.negative dev8_0_read
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_read.max 900000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_read.label sda
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.info I/O on device sda
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_args --base 1024 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_read.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_order dev8_0_read dev8_0_write
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.graph_vlabel blocks per ${graph_period} read (-) / written (+)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:iostat.dev8_0_write.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_title Fork rate
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.forks.label forks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_args --base 1000 -l 0 
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_category processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_order forks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.forks.info The number of forks per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_vlabel forks / ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.forks.max 100000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.forks.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.graph_info This graph shows the forking rate (new processes started).
+test.hjksolutions.com;app1prod.test.hjksolutions.com:forks.forks.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_title File table usage
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.used.label open files
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.max.info The maximum supported number of open files. Tune by modifying /proc/sys/fs/file-max.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.used.warning 354932
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_order used max
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.used.info The number of currently open files.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.used.critical 378080
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_vlabel number of open files
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.max.label max open files
+test.hjksolutions.com;app1prod.test.hjksolutions.com:open_files.graph_info This graph monitors the Linux open files table.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.graph_title Memory usage
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.cached.label cache
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap_cache.label swap_cache
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.apps.info Memory used by user-space applications.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.mapped.label mapped
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.vmalloc_used.info Virtual memory used by the kernel (used when the memory does not have to be physically contigious).
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap_cache.info A piece of memory that keeps track of pages that have been fetched from swap but not yet been modified.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.free.info Wasted memory. Memory that is not used for anything at all.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.apps.label apps
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap.label swap
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.cached.info Parked file data (file content) cache.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.page_tables.info Memory used to map between virtual and physical memory addresses.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.free.label unused
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.inactive.info Memory not currently used.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.active.label active
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.committed.label committed
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.active.info Memory recently used. Not reclaimed unless absolutely necessary.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.active.draw LINE2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.free.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.mapped.draw LINE2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.slab.info Memory used by the kernel (major users are caches like inode, dentry, etc).
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.page_tables.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.inactive.label inactive
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.slab.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap_cache.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.vmalloc_used.label vmalloc_used
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.committed.draw LINE2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.graph_info This graph shows what the machine uses its memory for.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.slab.label slab_cache
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.mapped.info All mmap()ed pages.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.buffers.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.swap.info Swap space used.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.apps.draw AREA
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.buffers.info Block device (e.g. harddisk) cache. Also where "dirty" blocks are stored until written.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.graph_args --base 1024 -l 0 --vertical-label Bytes --upper-limit 4252311552
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.inactive.draw LINE2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.page_tables.label page_tables
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.graph_order apps page_tables swap_cache vmalloc_used slab cached buffers free swap committed mapped active inactive
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.cached.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.vmalloc_used.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.buffers.label buffers
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.committed.warn 14459842560
+test.hjksolutions.com;app1prod.test.hjksolutions.com:memory.committed.info The amount of memory that would be used if all the memory that's been allocated were to be used.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_title Postgres active connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.connections.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_args -l 0 --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_category Postgresql
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.connections.info Active connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_order connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.connections.label Active connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_vlabel Active connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.graph_info Shows active Postgresql connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.connections.warning 140
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_connections.connections.critical 160
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.graph_title VMstat
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.sleep.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.wait.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.sleep.max 500000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.graph_category processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.graph_order wait sleep
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.wait.label running
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.graph_vlabel process states
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.sleep.label I/O sleep
+test.hjksolutions.com;app1prod.test.hjksolutions.com:vmstat.wait.max 500000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_title eth0 errors
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.rcvd.label packets
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.trans.negative rcvd
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.trans.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_order rcvd trans
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.rcvd.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.trans.warning 1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.rcvd.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.graph_info This graph shows the amount of errors on the eth0 network interface.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.rcvd.warning 1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth0.trans.label packets
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_title Apache processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.idle80.label idle servers 80
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_total total
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_category apache
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_order busy80 idle80
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.busy80.draw AREA
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.graph_vlabel processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.busy80.label busy servers 80
+test.hjksolutions.com;app1prod.test.hjksolutions.com:apache_processes.idle80.draw STACK
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_title Available entropy
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_scale no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.entropy.info The number of random bytes available. This is typically used by cryptographic applications.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_order entropy
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.entropy.label entropy
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_vlabel entropy (bytes)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:entropy.graph_info This graph shows the amount of entropy available in the system.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_title Number of Processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.processes.info The current number of processes.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_args --base 1000 -l 0 
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_category processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.processes.label processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_order processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.processes.draw LINE2
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_vlabel number of processes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:processes.graph_info This graph shows the number of processes in the system.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_title Netstat
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.active.max 50000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.failed.info The number of failed TCP connection attempts per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.passive.info The number of passive TCP openings per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.passive.label passive
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.failed.label failed
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.resets.max 50000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.active.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.established.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.failed.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.established.info The number of currently open connections.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_info This graph shows the TCP activity of all the network interfaces combined.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.established.label established
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.established.max 50000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.passive.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.resets.label resets
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.resets.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.passive.max 50000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.active.label active
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.failed.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.active.info The number of active TCP openings per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_args -l 0 --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_order active passive failed resets established
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.resets.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.resets.info The number of TCP connection resets.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_vlabel active connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.active.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.failed.max 50000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.passive.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:netstat.graph_period second
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_title Interrupts & context switches
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.intr.max 100000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_category system
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_order intr ctx
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.intr.info Interrupts are events that alter sequence of instructions executed by a processor. They can come from either hardware (exceptions, NMI, IRQ) or software.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.intr.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.intr.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.ctx.label context switches
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_vlabel interrupts & ctx switches / ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.ctx.min 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.ctx.max 100000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.graph_info This graph shows the number of interrupts and context switches on the system. These are typically high on a busy system.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.ctx.info A context switch occurs when a multitasking operatings system suspends the currently running process, and starts executing another.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.ctx.type DERIVE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:interrupts.intr.label interrupts
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.graph_title www connection count
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.count.label www
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.graph_vlabel concurrent connections
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.graph_args --base 1000 -l 0
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:port_www.graph_order count
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_title Postgres locks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.locks.critical 10
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.locks.warning 5
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.exlocks.warning 5
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_category Postgresql
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_order locks exlocks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.locks.info Locks (more info here, please... :)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.exlocks.info Exclusive locks (here too, please... :)
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.locks.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_vlabel Locks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.exlocks.label Exclusive locks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.graph_info Shows Postgresql locks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.locks.label Locks
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.exlocks.critical 10
+test.hjksolutions.com;app1prod.test.hjksolutions.com:postgres_locks.exlocks.type GAUGE
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_title eth1 errors
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.rcvd.label packets
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.trans.negative rcvd
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.trans.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_order rcvd trans
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.rcvd.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.trans.warning 1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.rcvd.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.graph_info This graph shows the amount of errors on the eth1 network interface.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.rcvd.warning 1
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_err_eth1.trans.label packets
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_title eth1 traffic
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.max 100000000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.label bps
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_category network
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.down.cdef down,8,*
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.down.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_info This graph shows the traffic of the eth1 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.type COUNTER
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.down.graph no
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.info Traffic of the eth1 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.cdef up,8,*
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_args --base 1000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_order down up
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.down.label received
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.down.max 100000000
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app1prod.test.hjksolutions.com:if_eth1.up.negative down
+test.hjksolutions.com;app1prod.test.hjksolutions.com:use_node_name yes
+test.hjksolutions.com;app1prod.test.hjksolutions.com:address 192.168.1.100
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_title Inode table usage
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.used.label open inodes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.max.info The size of the system inode table. This is dynamically adjusted by the kernel.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_order used max
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.used.info The number of currently open inodes.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_vlabel number of open inodes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.max.label inode table size
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_inodes.graph_info This graph monitors the Linux open inode table.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.graph_title Individual interrupts
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iNMI.label NMI
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i9.label acpi
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i7.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i18.info Interrupt 18, for device(s): eth1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iMIS.label MIS
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i8.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iNMI.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i9.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i9.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i19.label eth0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i18.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i17.label ehci_hcd:usb1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i8.label rtc
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i6.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i1.info Interrupt 1, for device(s): i8042
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iERR.label ERR
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i12.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i6.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i7.info Interrupt 7, for device(s): parport0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i1.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i17.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iNMI.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iERR.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i15.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i0.label timer
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i14.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i8.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i1.label i8042
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i14.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i6.label floppy
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i7.label parport0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i7.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i16.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i20.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i14.label libata
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i12.label i8042
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i20.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iLOC.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i6.info Interrupt 6, for device(s): floppy
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i15.label libata
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.graph_order i0 i1 i6 i7 i8 i9 i12 i14 i15 i16 i17 i18 i19 i20 i21 iNMI iLOC iERR iMIS
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i1.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i20.label uhci_hcd:usb3
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i0.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i17.info Interrupt 17, for device(s): ehci_hcd:usb1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i16.label uhci_hcd:usb2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i16.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i18.label eth1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i20.info Interrupt 20, for device(s): uhci_hcd:usb3
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iLOC.label LOC
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i9.info Interrupt 9, for device(s): acpi
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i21.label 3w-xxxx
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i16.info Interrupt 16, for device(s): uhci_hcd:usb2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i15.info Interrupt 15, for device(s): libata
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i19.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iERR.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i0.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i18.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.graph_vlabel interrupts / ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iMIS.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i19.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i21.info Interrupt 21, for device(s): 3w-xxxx
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i8.info Interrupt 8, for device(s): rtc
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iLOC.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i14.info Interrupt 14, for device(s): libata
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i17.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i12.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i15.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i0.info Interrupt 0, for device(s): timer
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.graph_args --base 1000 -l 0;
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.iMIS.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i19.info Interrupt 19, for device(s): eth0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i12.info Interrupt 12, for device(s): i8042
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i21.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:irqstats.i21.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_title eth0 traffic
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.max 100000000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.label bps
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.down.cdef down,8,*
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.down.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_info This graph shows the traffic of the eth0 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.down.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.info Traffic of the eth0 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.cdef up,8,*
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_args --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_order down up
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.down.label received
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.down.max 100000000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth0.up.negative down
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_title Filesystem usage (in %)
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.procbususb.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varlock_var_lock.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_mapper_15996__35564_root.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_category disk
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_sda1.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_mapper_15996__35564_root.label /
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varrun_var_run.label /var/run
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.udev_dev.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_sda1.info /boot (ext3) -> /dev/sda1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.procbususb.label /proc/bus/usb
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varlock_var_lock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_vlabel %
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.udev_dev.label /dev
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_mapper_15996__35564_root.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_sda1.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varrun_var_run.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varlock_var_lock.label /var/lock
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.devshm_dev_shm.label /dev/shm
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.devshm_dev_shm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_info This graph shows disk usage on the machine.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_mapper_15996__35564_root.info / (ext3) -> /dev/mapper/15996--35564-root
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.devshm_dev_shm.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df._dev_sda1.label /boot
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varlock_var_lock.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.udev_dev.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.graph_order _dev_mapper_15996__35564_root _dev_sda1 devshm_dev_shm procbususb udev_dev varlock_var_lock varrun_var_run
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varrun_var_run.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.procbususb.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.varrun_var_run.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.devshm_dev_shm.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df.udev_dev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.graph_title Swap in/out
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_out.label swap
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_out.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_in.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_out.negative swap_in
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.graph_args -l 0 --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_out.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.graph_order swap_in swap_out
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_in.label swap
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_in.max 100000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_in.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.graph_vlabel pages per ${graph_period} in (-) / out (+)
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_out.max 100000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:swap.swap_in.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_title Load average
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.load.warning 10
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_scale no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.load.critical 120
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_order load
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_vlabel load
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.graph_info The load average of the machine describes how many processes are in the run-queue (scheduled to run "immediately").
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.load.info Average load for the five minutes.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:load.load.label load
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_title Inode usage (in %)
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.devshm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.procbususb.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_mapper_15996__35564_root.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_category disk
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varrun.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varlock.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_sda1.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_mapper_15996__35564_root.label /
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_sda1.info /boot (ext3) -> /dev/sda1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.procbususb.label /proc/bus/usb
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_vlabel %
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varlock.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_mapper_15996__35564_root.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.udev.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_sda1.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varrun.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varlock.label /var/lock
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_info This graph shows the inode usage for the partitions of types that use inodes.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_mapper_15996__35564_root.info / (ext3) -> /dev/mapper/15996--35564-root
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.devshm.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode._dev_sda1.label /boot
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.udev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varrun.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.graph_order _dev_mapper_15996__35564_root _dev_sda1 devshm procbususb udev varlock varrun
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.devshm.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.procbususb.warning 92
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.udev.critical 98
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.devshm.label /dev/shm
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varrun.label /var/run
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.varlock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;app2prod.test.hjksolutions.com:df_inode.udev.label /dev
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_title CPU usage
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.info Idle CPU time
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.warning 320
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.info CPU time spent handling "batched" interrupts
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.label system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.info CPU time spent handling interrupts
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.info CPU time spent by the kernel in system activities
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.warning 120
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_vlabel %
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.info CPU time spent waiting for I/O operations to finish
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.critical 200
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_period second
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.info CPU time spent by nice(1)d programs
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_info This graph shows how CPU time is spent.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.label iowait
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.max 5000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.system.draw AREA
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.label irq
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_scale no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_args --base 1000 -r --lower-limit 0 --upper-limit 400
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.graph_order system user nice idle iowait irq softirq
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.label user
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.label nice
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.user.info CPU time spent by normal programs and daemons
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.irq.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.iowait.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.nice.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.softirq.label softirq
+test.hjksolutions.com;app2prod.test.hjksolutions.com:cpu.idle.label idle
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_title File table usage
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.used.label open files
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.max.info The maximum supported number of open files. Tune by modifying /proc/sys/fs/file-max.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.used.warning 354844
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_order used max
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.used.info The number of currently open files.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.used.critical 377986
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_vlabel number of open files
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.max.label max open files
+test.hjksolutions.com;app2prod.test.hjksolutions.com:open_files.graph_info This graph monitors the Linux open files table.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_title Fork rate
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.forks.label forks
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_args --base 1000 -l 0 
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_category processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_order forks
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.forks.info The number of forks per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_vlabel forks / ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.forks.max 100000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.forks.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.graph_info This graph shows the forking rate (new processes started).
+test.hjksolutions.com;app2prod.test.hjksolutions.com:forks.forks.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_title IOstat
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.label sda
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_category disk
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_read.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_info This graph shows the I/O to and from block devices.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_read.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.max 900000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.negative dev8_0_read
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_read.max 900000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_read.label sda
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.info I/O on device sda
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_args --base 1024 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_read.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_order dev8_0_read dev8_0_write
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.graph_vlabel blocks per ${graph_period} read (-) / written (+)
+test.hjksolutions.com;app2prod.test.hjksolutions.com:iostat.dev8_0_write.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.graph_title Memory usage
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.cached.label cache
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap_cache.label swap_cache
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.apps.info Memory used by user-space applications.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.mapped.label mapped
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.vmalloc_used.info Virtual memory used by the kernel (used when the memory does not have to be physically contigious).
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap_cache.info A piece of memory that keeps track of pages that have been fetched from swap but not yet been modified.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.free.info Wasted memory. Memory that is not used for anything at all.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.apps.label apps
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap.label swap
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.cached.info Parked file data (file content) cache.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.page_tables.info Memory used to map between virtual and physical memory addresses.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.free.label unused
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.inactive.info Memory not currently used.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.active.label active
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.committed.label committed
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.active.info Memory recently used. Not reclaimed unless absolutely necessary.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.active.draw LINE2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.free.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.mapped.draw LINE2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.slab.info Memory used by the kernel (major users are caches like inode, dentry, etc).
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.page_tables.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.inactive.label inactive
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.slab.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap_cache.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.vmalloc_used.label vmalloc_used
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.committed.draw LINE2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.graph_info This graph shows what the machine uses its memory for.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.slab.label slab_cache
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.mapped.info All mmap()ed pages.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.buffers.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.swap.info Swap space used.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.apps.draw AREA
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.buffers.info Block device (e.g. harddisk) cache. Also where "dirty" blocks are stored until written.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.graph_args --base 1024 -l 0 --vertical-label Bytes --upper-limit 4252102656
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.inactive.draw LINE2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.page_tables.label page_tables
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.graph_order apps page_tables swap_cache vmalloc_used slab cached buffers free swap committed mapped active inactive
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.cached.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.vmalloc_used.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.buffers.label buffers
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.committed.warn 14456836096
+test.hjksolutions.com;app2prod.test.hjksolutions.com:memory.committed.info The amount of memory that would be used if all the memory that's been allocated were to be used.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.graph_title VMstat
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.sleep.type GAUGE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.wait.type GAUGE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.sleep.max 500000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.graph_category processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.graph_order wait sleep
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.wait.label running
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.graph_vlabel process states
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.sleep.label I/O sleep
+test.hjksolutions.com;app2prod.test.hjksolutions.com:vmstat.wait.max 500000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_title Apache processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.idle80.label idle servers 80
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_total total
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_category apache
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_order busy80 idle80
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.busy80.draw AREA
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.graph_vlabel processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.busy80.label busy servers 80
+test.hjksolutions.com;app2prod.test.hjksolutions.com:apache_processes.idle80.draw STACK
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_title eth0 errors
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.rcvd.label packets
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.trans.negative rcvd
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.trans.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_args --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_order rcvd trans
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.rcvd.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.trans.warning 1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.rcvd.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.graph_info This graph shows the amount of errors on the eth0 network interface.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.rcvd.warning 1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth0.trans.label packets
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_title Available entropy
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_scale no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.entropy.info The number of random bytes available. This is typically used by cryptographic applications.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_order entropy
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.entropy.label entropy
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_vlabel entropy (bytes)
+test.hjksolutions.com;app2prod.test.hjksolutions.com:entropy.graph_info This graph shows the amount of entropy available in the system.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_title Number of Processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.processes.info The current number of processes.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_args --base 1000 -l 0 
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_category processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.processes.label processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_order processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.processes.draw LINE2
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_vlabel number of processes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:processes.graph_info This graph shows the number of processes in the system.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_title Netstat
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.active.max 50000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.failed.info The number of failed TCP connection attempts per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.passive.info The number of passive TCP openings per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.passive.label passive
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.failed.label failed
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.resets.max 50000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.active.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.established.type GAUGE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.failed.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.established.info The number of currently open connections.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_info This graph shows the TCP activity of all the network interfaces combined.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.established.label established
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.established.max 50000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.passive.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.resets.label resets
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.resets.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.passive.max 50000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.active.label active
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.failed.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.active.info The number of active TCP openings per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_args -l 0 --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_order active passive failed resets established
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.resets.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.resets.info The number of TCP connection resets.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_vlabel active connections
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.active.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.failed.max 50000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.passive.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:netstat.graph_period second
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_title Interrupts & context switches
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.intr.max 100000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_category system
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_order intr ctx
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.intr.info Interrupts are events that alter sequence of instructions executed by a processor. They can come from either hardware (exceptions, NMI, IRQ) or software.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.intr.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.intr.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.ctx.label context switches
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_vlabel interrupts & ctx switches / ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.ctx.min 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.ctx.max 100000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.graph_info This graph shows the number of interrupts and context switches on the system. These are typically high on a busy system.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.ctx.info A context switch occurs when a multitasking operatings system suspends the currently running process, and starts executing another.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.ctx.type DERIVE
+test.hjksolutions.com;app2prod.test.hjksolutions.com:interrupts.intr.label interrupts
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.graph_title www connection count
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.count.label www
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.graph_vlabel concurrent connections
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.graph_args --base 1000 -l 0
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:port_www.graph_order count
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_title eth1 errors
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.rcvd.label packets
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.trans.negative rcvd
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.trans.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_args --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_order rcvd trans
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.rcvd.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.trans.warning 1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.rcvd.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.graph_info This graph shows the amount of errors on the eth1 network interface.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.rcvd.warning 1
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_err_eth1.trans.label packets
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_title eth1 traffic
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.max 100000000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.label bps
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_category network
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.down.cdef down,8,*
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.down.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_info This graph shows the traffic of the eth1 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.type COUNTER
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.down.graph no
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.info Traffic of the eth1 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.cdef up,8,*
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_args --base 1000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_order down up
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.down.label received
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.down.max 100000000
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;app2prod.test.hjksolutions.com:if_eth1.up.negative down
+test.hjksolutions.com;app2prod.test.hjksolutions.com:use_node_name yes
+test.hjksolutions.com;app2prod.test.hjksolutions.com:address 192.168.1.101
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_title Inode table usage
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.used.label open inodes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.max.info The size of the system inode table. This is dynamically adjusted by the kernel.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_order used max
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.used.info The number of currently open inodes.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_vlabel number of open inodes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.max.label inode table size
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_inodes.graph_info This graph monitors the Linux open inode table.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.graph_title Individual interrupts
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iNMI.label NMI
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i9.label acpi
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i7.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i18.info Interrupt 18, for device(s): uhci_hcd:usb1, ehci_hcd:usb5
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iMIS.label MIS
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i8.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iNMI.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i9.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i9.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i19.label uhci_hcd:usb2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i18.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i17.label eth1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i8.label rtc
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i6.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i1.info Interrupt 1, for device(s): i8042
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iERR.label ERR
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i6.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i7.info Interrupt 7, for device(s): parport0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i1.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i17.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iNMI.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iERR.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i15.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i14.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i0.label timer
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i8.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i1.label i8042
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i14.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i6.label floppy
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i7.label parport0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i7.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i16.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i20.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i14.label libata
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i20.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iLOC.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i6.info Interrupt 6, for device(s): floppy
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i15.label libata
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.graph_order i0 i1 i6 i7 i8 i9 i14 i15 i16 i17 i18 i19 i20 iNMI iLOC iERR iMIS
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i1.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i20.label uhci_hcd:usb3
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i0.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i17.info Interrupt 17, for device(s): eth1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i16.label uhci_hcd:usb4, eth0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i16.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i18.label uhci_hcd:usb1, ehci_hcd:usb5
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i20.info Interrupt 20, for device(s): uhci_hcd:usb3
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iLOC.label LOC
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i9.info Interrupt 9, for device(s): acpi
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i16.info Interrupt 16, for device(s): uhci_hcd:usb4, eth0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i15.info Interrupt 15, for device(s): libata
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i19.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iERR.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i0.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i18.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.graph_vlabel interrupts / ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iMIS.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i19.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iLOC.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i8.info Interrupt 8, for device(s): rtc
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i14.info Interrupt 14, for device(s): libata
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i17.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i15.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i0.info Interrupt 0, for device(s): timer
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.graph_args --base 1000 -l 0;
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.iMIS.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:irqstats.i19.info Interrupt 19, for device(s): uhci_hcd:usb2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.graph_title MySQL slow queries
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.queries.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.graph_category mysql
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.graph_order queries
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.queries.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.queries.label slow queries
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.graph_vlabel slow queries / ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_slowqueries.queries.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_title eth0 traffic
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.max 100000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.label bps
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.down.cdef down,8,*
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.down.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_info This graph shows the traffic of the eth0 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.down.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.info Traffic of the eth0 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.cdef up,8,*
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_order down up
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.down.label received
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.down.max 100000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth0.up.negative down
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_title Mongrel Memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5004.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5000.info Process memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5002.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5001.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5003.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5004.label mongrel_5004
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_category Memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5004.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_info Tracks the size of individual mongrel processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5002.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5002.info Process memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5000.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5001.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5003.label mongrel_5003
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5000.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5001.info Process memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_scale yes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_args --base 1024 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_order mongrel_5000 mongrel_5001 mongrel_5002 mongrel_5003 mongrel_5004
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5002.label mongrel_5002
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.graph_vlabel RSS
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5000.label mongrel_5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5003.info Process memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5001.label mongrel_5001
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5003.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mongrel_process_memory.mongrel_5004.info Process memory
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_title Filesystem usage (in %)
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.procbususb.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varlock_var_lock.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df._dev_sda1.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varrun_var_run.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_category disk
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varlock_var_lock.label /var/lock
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.devshm_dev_shm.label /dev/shm
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_info This graph shows disk usage on the machine.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.devshm_dev_shm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df._dev_sda1.label /
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df._dev_sda1.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.devshm_dev_shm.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.udev_dev.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varlock_var_lock.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varrun_var_run.label /var/run
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.udev_dev.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df._dev_sda1.info / (ext3) -> /dev/sda1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_order _dev_sda1 devshm_dev_shm procbususb udev_dev varlock_var_lock varrun_var_run
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.procbususb.label /proc/bus/usb
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varrun_var_run.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.procbususb.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varlock_var_lock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.graph_vlabel %
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.varrun_var_run.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.devshm_dev_shm.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.udev_dev.label /dev
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df.udev_dev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.graph_title MySQL threads
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.threads.label mysql threads
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.graph_vlabel threads
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.graph_category mysql
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_threads.graph_order threads
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.graph_title Swap in/out
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_out.label swap
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_out.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_in.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_out.negative swap_in
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.graph_args -l 0 --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_out.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.graph_order swap_in swap_out
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_in.label swap
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_in.max 100000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_in.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.graph_vlabel pages per ${graph_period} in (-) / out (+)
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_out.max 100000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:swap.swap_in.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_title Load average
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.load.warning 10
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_scale no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.load.critical 120
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_order load
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_vlabel load
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.graph_info The load average of the machine describes how many processes are in the run-queue (scheduled to run "immediately").
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.load.info Average load for the five minutes.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:load.load.label load
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_title CPU usage
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.info Idle CPU time
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.warning 160
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.info CPU time spent handling "batched" interrupts
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.label system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.info CPU time spent handling interrupts
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.info CPU time spent by the kernel in system activities
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.warning 60
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_vlabel %
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.info CPU time spent waiting for I/O operations to finish
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.critical 100
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_period second
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.info CPU time spent by nice(1)d programs
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_info This graph shows how CPU time is spent.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.label iowait
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.max 5000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.system.draw AREA
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.label irq
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_scale no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_args --base 1000 -r --lower-limit 0 --upper-limit 200
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.graph_order system user nice idle iowait irq softirq
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.label user
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.label nice
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.user.info CPU time spent by normal programs and daemons
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.irq.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.iowait.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.nice.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.softirq.label softirq
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:cpu.idle.label idle
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_title Inode usage (in %)
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.devshm.info /dev/shm (tmpfs) -> devshm
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.procbususb.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varlock.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.udev.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode._dev_sda1.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_category disk
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varrun.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varrun.info /var/run (tmpfs) -> varrun
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varlock.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varlock.label /var/lock
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_info This graph shows the inode usage for the partitions of types that use inodes.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode._dev_sda1.label /
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode._dev_sda1.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.devshm.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.udev.info /dev (tmpfs) -> udev
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.procbususb.info /proc/bus/usb (usbfs) -> procbususb
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varrun.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode._dev_sda1.info / (ext3) -> /dev/sda1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_args --upper-limit 100 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_order _dev_sda1 devshm procbususb udev varlock varrun
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.procbususb.label /proc/bus/usb
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.devshm.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.procbususb.warning 92
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.graph_vlabel %
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.udev.critical 98
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.devshm.label /dev/shm
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.udev.label /dev
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varlock.info /var/lock (tmpfs) -> varlock
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:df_inode.varrun.label /var/run
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_title MySQL queries
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.select.label select
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_category mysql
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.delete.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.delete.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.insert.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.replace.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.update.label update
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.replace.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.delete.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.cache_hits.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_vlabel queries / ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.cache_hits.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.cache_hits.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.delete.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.select.draw AREA
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.replace.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.update.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.update.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.replace.label replace
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.delete.label delete
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.select.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.cache_hits.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.replace.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.insert.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_total total
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.select.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.update.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.select.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.graph_order select delete update insert cache_hits replace
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.update.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.insert.label insert
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.insert.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.cache_hits.label cache_hits
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_queries.insert.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_title File table usage
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.used.label open files
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.max.info The maximum supported number of open files. Tune by modifying /proc/sys/fs/file-max.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.used.warning 188844
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_order used max
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.used.info The number of currently open files.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.used.critical 201160
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_vlabel number of open files
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.max.label max open files
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:open_files.graph_info This graph monitors the Linux open files table.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_title Fork rate
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.forks.label forks
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_args --base 1000 -l 0 
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_category processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_order forks
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.forks.info The number of forks per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_vlabel forks / ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.forks.max 100000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.forks.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.graph_info This graph shows the forking rate (new processes started).
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:forks.forks.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_title IOstat
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.label sda
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_category disk
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_read.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_info This graph shows the I/O to and from block devices.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_read.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.max 900000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.negative dev8_0_read
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_read.max 900000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_read.label sda
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.info I/O on device sda
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_args --base 1024 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_read.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_order dev8_0_read dev8_0_write
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.graph_vlabel blocks per ${graph_period} read (-) / written (+)
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:iostat.dev8_0_write.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.graph_title Memory usage
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.cached.label cache
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap_cache.label swap_cache
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.apps.info Memory used by user-space applications.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.mapped.label mapped
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.vmalloc_used.info Virtual memory used by the kernel (used when the memory does not have to be physically contigious).
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap_cache.info A piece of memory that keeps track of pages that have been fetched from swap but not yet been modified.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.free.info Wasted memory. Memory that is not used for anything at all.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.apps.label apps
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap.label swap
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.cached.info Parked file data (file content) cache.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.page_tables.info Memory used to map between virtual and physical memory addresses.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.free.label unused
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.inactive.info Memory not currently used.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.active.label active
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.committed.label committed
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.active.info Memory recently used. Not reclaimed unless absolutely necessary.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.active.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.free.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.mapped.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.slab.info Memory used by the kernel (major users are caches like inode, dentry, etc).
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.page_tables.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.inactive.label inactive
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.slab.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap_cache.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.vmalloc_used.label vmalloc_used
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.committed.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.graph_info This graph shows what the machine uses its memory for.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.slab.label slab_cache
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.mapped.info All mmap()ed pages.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.buffers.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.swap.info Swap space used.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.apps.draw AREA
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.buffers.info Block device (e.g. harddisk) cache. Also where "dirty" blocks are stored until written.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.graph_args --base 1024 -l 0 --vertical-label Bytes --upper-limit 2124771328
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.inactive.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.page_tables.label page_tables
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.graph_order apps page_tables swap_cache vmalloc_used slab cached buffers free swap committed mapped active inactive
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.cached.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.vmalloc_used.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.buffers.label buffers
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.committed.warn 5225660416
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:memory.committed.info The amount of memory that would be used if all the memory that's been allocated were to be used.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.graph_title VMstat
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.sleep.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.wait.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.sleep.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.graph_category processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.graph_order wait sleep
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.wait.label running
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.graph_vlabel process states
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.sleep.label I/O sleep
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:vmstat.wait.max 500000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_title eth0 errors
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.rcvd.label packets
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.trans.negative rcvd
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.trans.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_order rcvd trans
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.rcvd.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.trans.warning 1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.rcvd.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.graph_info This graph shows the amount of errors on the eth0 network interface.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.rcvd.warning 1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth0.trans.label packets
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_title Apache processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.idle80.label idle servers 80
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_total total
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_category apache
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_order busy80 idle80
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.busy80.draw AREA
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.graph_vlabel processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.busy80.label busy servers 80
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:apache_processes.idle80.draw STACK
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_title Available entropy
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_scale no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.entropy.info The number of random bytes available. This is typically used by cryptographic applications.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_order entropy
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.entropy.label entropy
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_vlabel entropy (bytes)
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:entropy.graph_info This graph shows the amount of entropy available in the system.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_title Number of Processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.processes.info The current number of processes.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_args --base 1000 -l 0 
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_category processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.processes.label processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_order processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.processes.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_vlabel number of processes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:processes.graph_info This graph shows the number of processes in the system.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_title Netstat
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.active.max 50000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.failed.info The number of failed TCP connection attempts per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.passive.info The number of passive TCP openings per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.passive.label passive
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.failed.label failed
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.resets.max 50000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.active.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.established.type GAUGE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.failed.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.established.info The number of currently open connections.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_info This graph shows the TCP activity of all the network interfaces combined.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.established.label established
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.established.max 50000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.passive.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.resets.label resets
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.resets.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.passive.max 50000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.active.label active
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.failed.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.active.info The number of active TCP openings per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_args -l 0 --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_order active passive failed resets established
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.resets.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.resets.info The number of TCP connection resets.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_vlabel active connections
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.active.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.failed.max 50000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.passive.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:netstat.graph_period second
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_title Interrupts & context switches
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.intr.max 100000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_category system
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_order intr ctx
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.intr.info Interrupts are events that alter sequence of instructions executed by a processor. They can come from either hardware (exceptions, NMI, IRQ) or software.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.intr.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.intr.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.ctx.label context switches
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_vlabel interrupts & ctx switches / ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.ctx.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.ctx.max 100000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.graph_info This graph shows the number of interrupts and context switches on the system. These are typically high on a busy system.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.ctx.info A context switch occurs when a multitasking operatings system suspends the currently running process, and starts executing another.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.ctx.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:interrupts.intr.label interrupts
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.graph_title MySQL throughput
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.graph_category mysql
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.max 80000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.label transfer rate
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.label transfer rate
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.min 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.type DERIVE
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.graph_args --base 1024
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.recv.max 80000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.graph_order recv sent
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.negative recv
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.graph_vlabel bytes received (-) / sent (+) per ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:mysql_bytes.sent.draw LINE2
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.graph_title www connection count
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.count.label www
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.graph_vlabel concurrent connections
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.graph_args --base 1000 -l 0
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:port_www.graph_order count
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.graph_title Munin-graph
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.sfo_v2green_com.critical 179
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.graph_vlabel seconds
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.sfo_v2green_com.warning 100
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.sfo_v2green_com.label test.hjksolutions.com
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_graph.graph_order sfo_v2green_com
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_title eth1 traffic
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.max 100000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.label bps
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.down.cdef down,8,*
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.down.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_info This graph shows the traffic of the eth1 network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments. To avoid this problem, use the ip_ plugin instead.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.down.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.info Traffic of the eth1 interface. Maximum speed is 100000000 bits per second.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.cdef up,8,*
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_order down up
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.down.label received
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.down.max 100000000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.graph_vlabel bits in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_eth1.up.negative down
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_title eth1 errors
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.rcvd.label packets
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.trans.negative rcvd
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.trans.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_args --base 1000
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_category network
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_order rcvd trans
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.rcvd.graph no
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.trans.warning 1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.rcvd.type COUNTER
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_vlabel packets in (-) / out (+) per ${graph_period}
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.graph_info This graph shows the amount of errors on the eth1 network interface.
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.rcvd.warning 1
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:if_err_eth1.trans.label packets
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.graph_title Munin-update
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.sfo_v2green_com.critical 180
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.graph_vlabel seconds
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.sfo_v2green_com.warning 100
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.sfo_v2green_com.label test.hjksolutions.com
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:munin_update.graph_order sfo_v2green_com
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:use_node_name yes
+test.hjksolutions.com;ops1prod.test.hjksolutions.com:address 192.168.1.102
+tmpldir /etc/munin/templates
+htmldir /var/www/munin
+dbdir /var/lib/munin
+rundir /var/run/munin
+logdir /var/log/munin
