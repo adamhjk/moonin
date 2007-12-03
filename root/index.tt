@@ -1,0 +1,15 @@
+<html>
+<body>
+    <h1>Moonin</h1>
+    [% FOR domain IN domains %]
+        <h2>[% domain %]</h2>
+        <ul>
+            [% FOR node IN nodes.$domain %]
+            <li><b>[% node %]</b>: 
+                [% nodes_categories.$domain.$node.join(",") %]
+            </li>
+            [% END %]
+        </ul>
+    [% END %]
+</body>
+</html>

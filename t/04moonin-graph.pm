@@ -1,5 +1,5 @@
 #
-# 02moonin-node.pm
+# 04moonin-graph.pm
 #
 # Copyright (C) 2007 Adam Jacob
 #
@@ -38,7 +38,8 @@ log4perl.appender.Screen.layout.ConversionPattern=[%d] [%C (%L)] [%p] %m%n
 use lib ( "$FindBin::Bin/lib", "$FindBin::Bin/../lib" );
 
 use Moonin::Config;
-use Moonin::Domain;
+use Moonin::Node;
+use Moonin::Graph;
 
 my $cfg =
   Moonin::Config->new( config_file => "$FindBin::Bin/data/munin-test.conf" );
@@ -48,7 +49,10 @@ my $mn = Moonin::Node->new(
   config => $cfg
 );
 isa_ok( $mn, 'Moonin::Node' );
-is($mn->node_config, $cfg->domain->{ "sfo.v2green.com" }->{node}->{ "ops1prod.sfo.v2green.com" }, "Node Config is correct" 
- );
-$mn->process;
-is(ref($mn->get_field_order("cpu")), 'ARRAY', "CPU returns array") 
+
+my $graph = Moonin::Graph->new(
+  node => $mn
+);
+
+$graph->process("cpu");
+$graph->process("cpu", "day");

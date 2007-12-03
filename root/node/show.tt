@@ -1,0 +1,16 @@
+<html>
+<body>
+    <h1>Moonin - [% domain %] - [% node %]</h1>
+    [% FOR category IN graph_categories.sort %]
+        <hr/>
+        <h2>[% category %]</h2>
+        [% FOR graph IN graphs.$category %]
+            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/day.png">
+            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/week.png">
+            <br/>
+            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/month.png">
+            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/year.png">
+        [% END %]
+    [% END %]
+</body>
+</html>

@@ -1,0 +1,5 @@
+---
+name: Moonin::Web
+Model::Config::Store:
+  args:
+    file: /Users/adam/src/sandbox/moonin/t/out
