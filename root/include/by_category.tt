@@ -1,0 +1,12 @@
+<div class="section_box">
+   <h1>By Category</h1>
+   <ul>
+    [% FOR category IN categories %]
+        <li><a href="[% c.uri_for("/category/$category") %]">[% category %]</a>:
+            [% FOR graph IN graph_categories.$category %]
+            <a href='[% c.uri_for("/category/$category/$graph.name") %]'>[% graph.data.graph_title %]</a> 
+            [% END %]
+         </li>
+    [% END %]
+   </ul>
+</div>

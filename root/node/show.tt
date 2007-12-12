@@ -1,16 +1,16 @@
-<html>
-<body>
-    <h1>Moonin - [% domain %] - [% node %]</h1>
+[% INCLUDE 'include/header.tt' %]
+<div class="section_box">
+    <div class="node_title">
+        <h2 class="inline"><a href='[% c.uri_for("/domain/$domain") %]'>[% domain %]</a> - [% node %]:</h2>
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'day'}) %]">day</a>]
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'week'}) %]">week</a>]
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'dayweek'}) %]">day/week</a>]
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'month'}) %]">month</a>]
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'year'}) %]">year</a>]
+        [<a href="[% c.uri_for("/node/$domain/$node", { graph_time => 'all'}) %]">all</a>]
+    </div>
     [% FOR category IN graph_categories.sort %]
-        <hr/>
-        <h2>[% category %]</h2>
-        [% FOR graph IN graphs.$category %]
-            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/day.png">
-            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/week.png">
-            <br/>
-            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/month.png">
-            <img src="/graph/[% domain %]/[% node %]/[% graph.name %]/year.png">
-        [% END %]
+        [% INCLUDE 'include/graph_category.tt' %]
     [% END %]
-</body>
-</html>
+</div>
+[% INCLUDE 'include/footer.tt' %]

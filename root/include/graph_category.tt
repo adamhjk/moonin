@@ -1,0 +1,60 @@
+[% xhr_gc_update_div = "gc-$domain-$node-$category" %]
+[% xhr_gc_update_div = xhr_gc_update_div.replace('\.', '-') %]
+[% UNLESS xhr %]
+<div class="node_graph_category" id="[% xhr_gc_update_div %]">
+[% END %]
+<div class="node_graph_category_title">
+<a name="[% category %]"></a>
+[% IF link_category %]
+<h3 class="inline"><a href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => "$graph_time" }) %]">[% category %]</a>:</h3> 
+[% ELSE %]
+<h3 class="inline">[% category %]:</h3> 
+[% END %]
+    [<a class="link_to_remote" 
+           id="[% category %]_day" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'day'}) %]">day</a>]
+    <span id='[% category %]_day_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+    
+    [<a class="link_to_remote" 
+           id="[% category %]_week" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'week'}) %]">week</a>]
+    <span id='[% category %]_week_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+    
+    [<a class="link_to_remote" 
+           id="[% category %]_dayweek" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'dayweek'}) %]">day/week</a>]
+    <span id='[% category %]_dayweek_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+    
+    [<a class="link_to_remote" 
+           id="[% category %]_month" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'day'}) %]">month</a>]
+    <span id='[% category %]_month_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+    
+    [<a class="link_to_remote" 
+           id="[% category %]_dayweekmonth" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'dayweekmonth'}) %]">day/week/month</a>]
+    <span id='[% category %]_dayweekmonth_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+    
+    [<a class="link_to_remote" 
+           id="[% category %]_year" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'year'}) %]">year</a>]
+    <span id='[% category %]_year_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+    [<a class="link_to_remote" 
+           id="[% category %]_all" 
+           update="[% xhr_gc_update_div %]" 
+           href="[% c.uri_for("/node/$domain/$node/$category", { graph_time => 'all'}) %]">all</a>]
+    <span id='[% category %]_all_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+</div>
+[% FOR graph IN graphs.$category %]
+[% INCLUDE 'include/graphs.tt'%]
+[% END %]
+[% UNLESS xhr %]
+</div>
+[% END %]

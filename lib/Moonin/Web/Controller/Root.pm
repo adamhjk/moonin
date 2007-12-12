@@ -37,16 +37,7 @@ sub default : Private {
 sub index : Private {
   my ( $self, $c ) = @_;
 
-  my $config = $c->model('Config');
-  $c->stash->{domains} = $config->get_domains;
-  $c->stash->{nodes} = {};
-  $c->stash->{nodes_categories} = {};
-  foreach my $domain (@{$c->stash->{domains}}) {
-    $c->stash->{nodes}->{$domain} = $config->get_nodes($domain);
-    foreach my $node (@{$c->stash->{nodes}->{$domain}}) {
-      $c->stash->{nodes_categories}->{$domain}->{$node} = $config->get_graph_categories($domain, $node);
-    }
-  }
+  $c->forward("/node/index");
 }
 
 =head2 end

@@ -1,0 +1,3 @@
+[% FOR category IN graph_categories.sort %]
+    [% INCLUDE 'include/graph_category.tt' %]
+[% END %]

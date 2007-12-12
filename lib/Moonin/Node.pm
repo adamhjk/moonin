@@ -14,7 +14,6 @@
 package Moonin::Node;
 
 use Moose;
-use Config::Any;
 use Data::Dump qw(dump);
 use Time::HiRes;
 use RRDs;
@@ -193,13 +192,12 @@ sub fetch {
       sprintf( "%.2f", ( Time::HiRes::time - $servicefetch_time ) );
     $self->log->debug(
       "Fetched service: $name -> $service ($servicefetch_time sec)");
-    $self->config->store->dbm->{FS}->{$domain}->{$name}->{$service} =
-      $servicefetch_time;
+    $self->config->store->set("FS-$domain-$name-$service", $servicefetch_time);
   }
   $nodefetch_time =
     sprintf( "%.2f", ( Time::HiRes::time - $nodefetch_time ) );
   $self->log->debug("Fetched node: $name ($nodefetch_time sec)");
-  $self->config->store->dbm->{FN}->{$domain}->{$name} = $nodefetch_time;
+  $self->config->store->set("FN-$domain-$name", $nodefetch_time);
 
   return 1;
 }
@@ -209,7 +207,7 @@ sub configure {
   my $domain  = $self->domain;
   my $name    = $self->name;
   my $node    = $self->node_config;
-  my $oldnode = $self->config->store->get("node-$domain-$name");
+  my $oldnode = $self->get_node_config;
 
   my $clientdomain = $self->_read_socket_single($socket);
   my $fetchdomain;
@@ -378,14 +376,13 @@ sub configure {
 
     $serviceconf_time =
       sprintf( "%.2f", ( Time::HiRes::time - $serviceconf_time ) );
-    $self->config->store->dbm->{'CS'}->{$domain}->{$name}->{$servname} =
-      $serviceconf_time;
+    $self->config->store->set("CS-$domain-$name-$servname",      $serviceconf_time);
     $self->log->debug(
       "Configured service: $name -> $servname ($serviceconf_time sec)");
   }
-  $self->config->store->dbm->{node}->{$domain}->{$name} = $node;
+  $self->config->store->set("node-$domain-$name", $node);
   $nodeconf_time = sprintf( "%.2f", ( Time::HiRes::time - $nodeconf_time ) );
-  $self->config->store->dbm->{'CN'}->{$domain}->{$name} = $nodeconf_time;
+  $self->config->store->set("CN-$domain-$name", $nodeconf_time);
   return 0 unless $socket;
   $self->log->debug("Configured node: $name ($nodeconf_time sec)");
   return 1;
@@ -393,8 +390,7 @@ sub configure {
 
 sub get_node_config {
   my $self = shift;
-  return $self->config->store->dbm->{node}->{ $self->domain }
-    ->{ $self->name };
+  return $self->config->store->get("node-" . $self->domain . "-" . $self->name);
 }
 
 sub get_field_order {

@@ -45,32 +45,21 @@ sub draw : Regex('graph/(.+?)/(.+?)/(.+?)/(.+).png') {
   my $time   = time;
   my $filename =
     $self->get_picture_filename( $c, $domain, $name, $service, $scale );
-  my $build_graphs = 0;
   if ( -f $filename ) {
-    $c->log->debug("I exist");
-    my @sstats = stat($filename);
-    my $slast_modified =
-      strftime( "%a, %d %b %Y %H:%M:%S %Z", localtime( $sstats[9] ) );
-    $c->log->debug("I have a $slast_modified");
-    my $modified_since = $c->req->header('If-Modified-Since');
-    $c->log->debug("I have $modified_since");
-    if ( defined $modified_since
-      and !&modified( $modified_since, $sstats[9] - 1 ) ) {
-      $c->res->status(304);
-      $c->res->content_type('image/png');
-      $c->res->header(
-        'Expires' => strftime(
-          "%a, %d %b %Y %H:%M:%S GMT",
-          gmtime( time + ( $period{$scale} - ( $time % $period{$scale} ) ) )
-        )
-      );
-      $c->res->header( 'Cache-Control' => "max-age=240" );
-      $c->res->header( 'Last-Modified' => $slast_modified );
-      return 1;
+    my $current_time = time;
+    my @file_stats = stat($filename);
+    my $slast_modified = $file_stats[9];
+    my $age = $current_time - $slast_modified;
+    if ($age > "299") {
+      $c->log->debug("Drawing new graph, it's past the max age");
+      $c->model( 'Graph', $domain, $name )->process( $service, $scale );
+    } else {
+      $c->log->debug("Skipping drawing new graph, it's below the max age");
     }
+  } else {
+    $c->log->debug("Drawing new graph, it has no image at all");
+    $c->model( 'Graph', $domain, $name )->process( $service, $scale );
   }
-  #$c->model( 'Graph', $domain, $name )->process( $service, $scale );
-  $c->log->debug("This is my $filename");
   my @stats = stat($filename);
   my $last_modified =
     strftime( "%a, %d %b %Y %H:%M:%S %Z", localtime( $stats[9] ) );

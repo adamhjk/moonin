@@ -14,82 +14,61 @@ package Moonin::Config::Store;
 
 use Moose;
 use Data::Dump qw(dump);
-use DBM::Deep;
+use Cache::FileCache;
 
 with 'MooseX::Role::Log4perl', 'Moonin::Role::Exception';
 
-has 'file' => ( is => 'rw', isa => 'Str', required => 1 );
-has 'dbm' => ( is => 'ro', isa => 'Object', required => 0 );
+has 'directory' => ( is => 'rw', isa => 'Str', required => 1 );
+has 'cache' => ( is => 'ro', isa => 'Object', required => 0 );
 
 sub BUILD {
   my $self = shift;
   
-  $self->{dbm} = DBM::Deep->new(
-    file => $self->file,
-    locking => 1,
-    autoflush => 1
+  $self->{cache} = Cache::FileCache->new({
+    namespace => "Moonin",
+    default_expires_in => $Cache::FileCache::EXPIRES_NEVER,
+    cache_root => $self->directory,
+  }
   );
+  
   $self;
 }
 
-sub put {
+sub set {
   my $self = shift;
-  $self->dbm->put(@_);
+  $self->cache->set(@_);
+  return 1;
 }
 
 sub get {
   my $self = shift;
-  $self->dbm->get(@_);
+  $self->cache->get(@_);
 }
 
 sub exists {
   my $self = shift;
-  $self->dbm->exists(@_);
+  my $key = shift;
+  return grep(/^$key$/, $self->cache->get_keys);
 }
 
-sub delete {
+sub remove {
   my $self = shift;
-  $self->dbm->delete(@_);
+  $self->cache->remove(@_);
 }
 
 sub clear {
   my $self = shift;
-  $self->dbm->clear(@_);
+  $self->cache->clear;
 }
 
-sub lock {
+sub keys {
   my $self = shift;
-  $self->dbm->lock(@_);
-}
-
-sub unlock {
-  my $self = shift;
-  $self->dbm->unlock(@_);
-}
-
-sub optimize {
-  my $self = shift;
-  $self->dbm->optimize(@_);
-}
-
-sub begin_work {
-  my $self = shift;
-  $self->dbm->begin_work(@_);
-}
-
-sub commit {
-  my $self = shift;
-  $self->dbm->commit(@_);
-}
-
-sub rollback {
-  my $self = shift;
-  $self->dbm->rollback(@_);
+  $self->cache->get_keys;
 }
 
 sub log_contents {
   my $self = shift;
-  $self->log->warn(dump($self->{dbm}));
+  $self->log->warn(dump($self->{cache}));
 }
 
 1;

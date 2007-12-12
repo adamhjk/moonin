@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Moonin</title>
+  <link rel="StyleSheet" href="[% c.uri_for('/static/css/moonin.css') %]" media="screen">
+  <script src="/static/javascript/jquery-1.2.1.pack.js" type="text/javascript"></script>
+  <script src="/static/javascript/autocomplete.js" type="text/javascript"></script>
+
+  <script src="/static/javascript/jquery.form.js" type="text/javascript"></script>
+  <script src="/static/javascript/jquery.livequery.min.js" type="text/javascript"></script>
+  <script src="/static/javascript/jquery.dimensions.pack.js" type="text/javascript"></script>
+  <script src="/static/javascript/moonin.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <h1>
+        <a href="[% c.uri_for('/') %]">Moonin</a>
+        </h1>
+    </div>
+    <div id="search">
+        <a href="[% c.uri_for('/node') %]">By Node</a>
+        |
+        <a href="[% c.uri_for('/category') %]">By Category</a>
+    </div>
+</div>
+<div id="content">
+
+

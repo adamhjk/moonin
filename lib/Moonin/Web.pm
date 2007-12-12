@@ -27,10 +27,16 @@ our $VERSION = '0.01';
 # with a external configuration file acting as an override for
 # local deployment.
 
-__PACKAGE__->config( name => 'Moonin::Web' );
+__PACKAGE__->config(
+   name => 'Moonin::Web',
+   'View::TT' => {
+     PRIVATE => undef,
+   }
+);
 __PACKAGE__->log(Catalyst::Log::Log4perl->new());
 # Start the application
 __PACKAGE__->setup;
+$Template::Stash::PRIVATE = undef;
 
 
 =head1 NAME

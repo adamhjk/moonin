@@ -106,8 +106,8 @@ has 'to_file' => ( is => 'rw', isa => 'Str', default => 0, required => 1 );
 
 sub BUILD {
   my $self = shift;
-  $self->{rrdkludge} = $RRDs::VERSION < 1.2 ? '' : '\\';
-  $self->{linekludge} = $RRDs::VERSION >= 1.2 ? 1 : 0;
+  $self->{rrdkludge}  = $RRDs::VERSION < 1.2  ? '' : '\\';
+  $self->{linekludge} = $RRDs::VERSION >= 1.2 ? 1  : 0;
 }
 
 sub _get_field_name {
@@ -332,12 +332,21 @@ sub process_all {
   my ($self) = @_;
   foreach my $service ( keys( %{ $self->node->get_node_config->{client} } ) )
   {
-    $self->logger->debug("Doing $service");
+    $self->logger->debug("Graphing $service");
     $self->process($service);
   }
 }
 
-sub process {
+sub pre_process_all {
+  my ($self) = @_;
+  foreach my $service ( keys( %{ $self->node->get_node_config->{client} } ) )
+  {
+    $self->logger->debug("Pre-Processing $service");
+    $self->pre_process($service);
+  }
+}
+
+sub pre_process {
   my ( $self, $service, $draw_time ) = @_;
   my $domain = $self->node->domain;
   my $name   = $self->node->name;
@@ -842,10 +851,13 @@ sub process {
     }
     $self->log->debug( "\n\nrrdtool \"graph\" \"",
       join( "\"\n\t\"", @complete ), "\"\n" );
-    RRDs::graph(@complete);
-    if ( my $ERROR = RRDs::error ) {
-      $self->log->error("Unable to graph $filename: $ERROR");
-    }
+    $self->node->config->store->set(
+      "graph-"
+        . $self->node->domain . "-"
+        . $self->node->name . "-"
+        . "$service" . "-" . "$time",
+      \@complete
+    );
   }
 
   if ( $self->node->get_bool_val( $service, "graph_sums", 0 ) ) {
@@ -934,16 +946,19 @@ sub process {
 
       $self->log->debug( "\n\nrrdtool \"graph\" \"",
         join( "\"\n\t\"", @rrd_sum ), "\"\n" );
-      RRDs::graph(@rrd_sum);
-
-      if ( my $ERROR = RRDs::error ) {
-        $self->log->error("Unable to graph $filename: $ERROR");
-      }
+      $self->node->config->store->set(
+        "graph-"
+          . $self->node->domain . "-"
+          . $self->node->name . "-"
+          . "$service" . "-sum-" . "$time",
+        \@rrd_sum
+      );
     }
   }
 
   $service_time = sprintf( "%.2f", ( Time::HiRes::time - $service_time ) );
-  $self->log->debug("Graphed service : $service ($service_time sec * 4)");
+  $self->log->debug(
+    "Pre-Processed Graph for : $service ($service_time sec * 4)");
 
   # print STATS "GS|$domain|$name|$service|$service_time\n"
   #   unless $skip_stats;
@@ -953,7 +968,67 @@ sub process {
       if exists $node->{client}->{$service}->{$_};
   }
   @added = ();
+}
 
+sub process {
+  my ( $self, $service, $draw_time ) = @_;
+  my $domain = $self->node->domain;
+  my $name   = $self->node->name;
+  my $node   = $self->node->get_node_config;
+
+  $self->log_exception( 'InvalidArgument', "Must supply a service!" )
+    unless $service;
+
+  my %times = %{ $self->times };
+
+  if ($draw_time) {
+    $self->log_exception( 'InvalidArgument', "You must supply a valid time!" )
+      unless exists $self->times->{$draw_time};
+    %times = ( $draw_time => $self->times->{$draw_time}, );
+  }
+
+  # Make my graphs
+  $self->log->debug("Drawing Graphs for $name service $service");
+  $self->log_exception( 'InvalidArgument',
+    "Service $service must exist for $node!" )
+    unless exists( $node->{client}->{$service} );
+
+  foreach my $time ( keys(%times) ) {
+    my $rrd_args =
+      $self->node->config->store->get(
+      "graph-" . $domain . "-" . $name . "-" . "$service" . "-" . "$time" );
+    if ($rrd_args) {
+      RRDs::graph( @{$rrd_args} );
+      if ( my $ERROR = RRDs::error ) {
+        $self->log->error(
+          "Unable to graph $domain $name $service $time: $ERROR");
+      }
+    } else {
+      $self->log->error(
+"Cannot find cached graph arguments for $domain, $name, $service, $time"
+      );
+    }
+  }
+  if ( $self->node->get_bool_val( $service, "graph_sums", 0 ) ) {
+    foreach my $time ( keys %{ $self->sumtimes } ) {
+      next unless ( $self->draw->{ "sum" . $time } );
+      my $rrd_args =
+        $self->node->config->store->get( "graph-" . $domain . "-" . $name . "-"
+          . "$service" . "-sum-"
+          . "$time" );
+      if ($rrd_args) {
+        RRDs::graph( @{$rrd_args} );
+        if ( my $ERROR = RRDs::error ) {
+          $self->log->error(
+            "Unable to graph $domain $name $service $time: $ERROR");
+        }
+      } else {
+        $self->log->error(
+"Cannot find cached graph arguments for $domain, $name, $service, $time"
+        );
+      }
+    }
+  }
 }
 
 sub _RRDescape {

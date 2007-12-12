@@ -117,9 +117,8 @@ sub BUILD {
     );
   }
 
-  $self->log->debug( "Adding " . $self->dbdir . "/moonin-config.db" );
   $self->{store} =
-    Moonin::Config::Store->new( file => $self->dbdir . "moonin-config.db" );
+    Moonin::Config::Store->new( directory => $self->dbdir );
 
   # $self->log->debug(dump($self->config));
 }
@@ -133,8 +132,89 @@ sub get_domains {
 sub get_nodes {
   my $self   = shift;
   my $domain = shift;
-  my @result = sort( keys( %{ $self->store->dbm->{node}->{$domain} } ) );
+  my @result = sort( keys( %{ $self->domain->{ $domain }->{node} } ) );
   return \@result;
+}
+
+sub get_all_graph_categories {
+  my $self = shift;
+  
+  my @results;
+  my @keys = $self->store->keys;
+  foreach my $key (@keys) {
+    next if $key !~ /^node-(.+?)-(.+)$/;
+    my $clients = $self->store->get($key)->{client};
+    foreach my $thing ( keys( %{$clients} ) ) {
+      if ( exists $clients->{$thing}->{'graph_category'} ) {
+         my $gc = ucfirst($clients->{$thing}->{'graph_category'});
+         push( @results, $gc )
+           unless ( grep /^$gc$/, @results );
+       }
+    }
+  }
+  @results = sort(@results);
+  return \@results;
+}
+
+sub get_all_graphs_by_category {
+  my $self = shift;
+  my $category = shift;
+  my $graph = shift;
+  
+  my $graphs = {};
+  my @keys = $self->store->keys;
+  foreach my $node (@keys) {
+    next if $node !~ /^node-(.+?)-(.+)$/;
+    my $clients = $self->store->get($node)->{client};
+    foreach my $thing ( keys( %{$clients} ) ) {
+      if ( exists $clients->{$thing}->{'graph_category'} ) {
+        my $gc = ucfirst($clients->{$thing}->{'graph_category'});
+        if (defined $category) {
+          if ($gc eq $category) {
+            if (defined $graph) {
+              push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} }) if $graph eq $thing;
+
+            } else {
+              push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+            }
+          }
+        } else {
+          push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+        }
+      }
+    }
+    foreach my $key (keys(%{$graphs})) {
+      my @sorted = sort
+        { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
+        @{$graphs->{$key}};
+      $graphs->{$key} = \@sorted;
+    }    
+  }
+  return $graphs;
+}
+
+sub get_all_nodes_by_graph {
+  my $self = shift;
+  my $graph = shift;
+  
+  my $nodes = {};
+  my @keys = $self->store->keys;
+  foreach my $node (@keys) {
+    next if $node !~ /^node-(.+?)-(.+)$/;
+    my $domainname = $1;
+    my $nodename = $2;
+    my $clients = $self->store->get($node)->{client};
+    foreach my $client ( keys( %{$clients} ) ) {
+      push(@{$nodes->{$client}}, { domain => $domainname, node => $nodename, graph => $clients->{$client} }); 
+    }
+  }
+  foreach my $key (keys(%{$nodes})) {
+    my @sorted = sort
+      { $a->{client}->{$key}->{data}->{graph_title} cmp $b->{client}->{$key}->{data}->{graph_title} }
+      @{$nodes->{$key}};
+    $nodes->{$key} = \@sorted;
+  }
+  return $nodes;
 }
 
 sub get_graph_categories {
@@ -142,7 +222,7 @@ sub get_graph_categories {
   my $domain = shift;
   my $name   = shift;
 
-  my $clients = $self->store->dbm->{node}->{$domain}->{$name}->{client};
+  my $clients = $self->store->get("node-$domain-$name")->{client};
 
   my @graph_categories;
   foreach my $thing ( keys( %{$clients} ) ) {
@@ -152,6 +232,7 @@ sub get_graph_categories {
         unless ( grep /^$gc$/, @graph_categories );
     }
   }
+  @graph_categories = sort(@graph_categories);
   return \@graph_categories;
 }
 
@@ -159,14 +240,33 @@ sub get_graphs_by_category {
   my $self = shift;
   my $domain = shift;
   my $name = shift;
+  my $category = shift;
+  my $graph = shift;
   
-  my $clients = $self->store->dbm->{node}->{$domain}->{$name}->{client};
+  my $clients = $self->store->get("node-$domain-$name")->{client};
   my $graphs = {};
   foreach my $thing ( keys( %{$clients} ) ) {
     if ( exists $clients->{$thing}->{'graph_category'} ) {
       my $gc = ucfirst($clients->{$thing}->{'graph_category'});
-      push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+      if (defined $category) {
+        if ($gc eq $category) {
+          if (defined $graph) {
+            push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} }) if $graph eq $thing;
+            
+          } else {
+            push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+          }
+        }
+      } else {
+        push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+      }
     }
+  }
+  foreach my $key (keys(%{$graphs})) {
+    my @sorted = sort
+      { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
+      @{$graphs->{$key}};
+    $graphs->{$key} = \@sorted;
   }
   return $graphs;
 }

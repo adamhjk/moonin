@@ -1,0 +1,129 @@
+[% INCLUDE 'include/header.tt' %]
+<div class="section_box">
+    <div class="node_title">
+        <h2 class="inline"><a href='[% c.uri_for("/category/$category") %]'>[% category %]</a>:</h2>
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'day'}) %]">day</a>]
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'week'}) %]">week</a>]
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'dayweek'}) %]">day/week</a>]
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'month'}) %]">month</a>]
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'year'}) %]">year</a>]
+        [<a href="[% c.uri_for("/category/$category", { graph_time => 'all'}) %]">all</a>]
+    </div>
+    
+    [% FOR graph IN graphs.$category %]
+    [% graph_name = graph.name %]
+    [% xhr_gc_graph_update_div = "gc-$domain-$node-$category-$graph_name" %]
+    [% xhr_gc_graph_update_div = xhr_gc_graph_update_div.replace('\.', '-') %]
+    [% UNLESS xhr %]
+    <div class="node_graph" id="[% xhr_gc_graph_update_div %]">
+    [% END %]
+    <div class="node_graph_title">
+        [% IF link_graphs %]
+        <h4 class="inline"><a href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { 'graph_time' => "$graph_time" }) %]">[% graph.data.graph_title %]</a>:</h4>
+        [% ELSE %]
+        <h4 class="inline">[% graph.data.graph_title %]:</h4>
+        [% END %]
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_day" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'day' }) %]">day</a>]
+        <span id='[% category %]_[% graph_name %]_day_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_week" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'week'}) %]">week</a>]
+        <span id='[% category %]_[% graph_name %]_week_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_dayweek" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'dayweek'}) %]">day/week</a>]
+        <span id='[% category %]_[% graph_name %]_dayweek_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_month" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'month'}) %]">month</a>]
+        <span id='[% category %]_[% graph_name %]_month_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_dayweekmonth" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'dayweekmonth'}) %]">day/week/month</a>]
+        <span id='[% category %]_[% graph_name %]_week_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_year" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'year'}) %]">year</a>]
+        <span id='[% category %]_[% graph_name %]_year_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+
+        [<a class="link_to_remote" 
+               id="[% category %]_[% graph_name %]_all" 
+               update="[% xhr_gc_graph_update_div %]" 
+               href="[% c.uri_for("/node/$domain/$node/$category/$graph_name", { graph_time => 'all'}) %]">all</a>]
+        <span id='[% category %]_[% graph_name %]_all_spinner' style='display: none;' class='spinner'><img src="[% c.uri_for("/static/images/spinner.gif") %]" /></span>
+        </div>
+        [% FOREACH node_data IN nodes.$graph_name %]
+         [% node = node_data.node %]
+         [% domain = node_data.domain %]
+        <div class="node_graph_data">
+           <h4><a href="[% c.uri_for("/node/$domain/$node") %]">[% node %]</a></h4>
+           <table class="graph">
+        [% IF graph_time == "all" %]
+             <tr>
+                <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/day.png">
+                </td>
+                <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/week.png">
+               </td>
+            </tr>
+            <tr>
+               <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/month.png">
+                </td>
+             <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/year.png">
+            </td>
+        [% ELSIF graph_time == "dayweek" %]
+             <tr>
+                <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/day.png">
+            </td>
+            <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/week.png">
+            </td>
+            </tr>
+        [% ELSIF graph_time == "dayweekmonth" %]
+             <tr>
+                <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/day.png">
+            </td>
+            <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/week.png"><br/>
+            </td>
+            </tr>
+            <tr>
+               <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/month.png">
+            </td>
+            <td></td>
+            </tr>
+        [% ELSE %]
+          <tr>
+             <td>
+            <img class="graph" src="/graph/[% domain %]/[% node %]/[% graph.name %]/[% graph_time %].png">
+            </td>
+            </tr>
+        [% END %]
+        </table>
+        [% END %]
+        </div>
+     [% UNLESS xhr %]
+     </div>
+     [% END %]
+    [% END %]
+</div>
+[% INCLUDE 'include/footer.tt' %]

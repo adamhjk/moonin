@@ -1,0 +1,11 @@
+
+[% INCLUDE 'include/header.tt' %]
+<div class="section_box">
+    <div class="node_title">
+        <h2 class="inline"><a href='[% c.uri_for("/domain/$domain") %]'>[% domain %]</a> - <a href='[% c.uri_for("/node/$domain/$node") %]'>[% node %]:</h2>
+    </div>
+    [% FOR category IN graph_categories.sort %]
+        [% INCLUDE 'include/graph_category.tt' %]
+    [% END %]
+</div>
+[% INCLUDE 'include/footer.tt' %]

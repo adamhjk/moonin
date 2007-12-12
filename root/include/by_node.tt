@@ -1,0 +1,14 @@
+<div class="section_box">
+    [% FOR domain IN domains %]
+        <h2><a href="[% c.uri_for("/domain/$domain") %]">[% domain %]</a></h2>
+        <ul>
+            [% FOR node IN nodes.$domain %]
+            <li><b><a href='[% c.uri_for("/node/$domain/$node") %]'>[% node %]</a></b>: 
+                [% FOR category IN nodes_categories.$domain.$node %]
+                <a href='[% c.uri_for("/node/$domain/$node/$category") %]'>[% category %]</a>
+                [% END %]
+            </li>
+            [% END %]
+        </ul>
+    [% END %]
+</div>

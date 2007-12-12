@@ -2,7 +2,6 @@ package Moonin::Web::View::TT;
 
 use strict;
 use base 'Catalyst::View::TT';
-
 __PACKAGE__->config(TEMPLATE_EXTENSION => '.tt');
 
 =head1 NAME
