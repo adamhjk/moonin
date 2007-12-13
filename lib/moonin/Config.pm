@@ -423,31 +423,29 @@ sub domain {
 
 sub get {
   my $self    = shift;
-  my $conf    = $self->config;
   my $field   = shift;
   my $default = shift;
   my $domain  = shift;
   my $node    = shift;
   my $service = shift;
   my $plot    = shift;
-
+  my $conf    = $self->config;
+  my $nconf = $self->store->get("node-" . $domain . "-" . $node);
+  
   if ( defined $field ) {
-    return $conf->{domain}->{$domain}->{node}->{$node}->{client}->{$service}
+    return $nconf->{client}->{$service}
       ->{"$plot.$field"}
       if (defined $domain
       and defined $node
       and defined $service
       and defined $plot
-      and defined $conf->{domain}->{$domain}->{node}->{$node}->{client}
-      ->{$service}->{"$plot.$field"} );
+      and defined $nconf->{client}->{$service}->{"$plot.$field"} );
 
-    return $conf->{domain}->{$domain}->{node}->{$node}->{client}->{$service}
-      ->{$field}
+    return $nconf->{client}->{$service}->{$field}
       if (defined $domain
       and defined $node
       and defined $service
-      and defined $conf->{domain}->{$domain}->{node}->{$node}->{client}
-      ->{$service}->{$field} );
+      and defined $nconf->{client}->{$service}->{$field} );
     return $conf->{domain}->{$domain}->{node}->{$node}->{$field}
       if (defined $domain
       and defined $node
@@ -458,12 +456,11 @@ sub get {
       if ( defined $conf->{$field} );
     return $default;
   } else {
-    return $conf->{domain}->{$domain}->{node}->{$node}->{client}->{$service}
+    return $nconf->{client}->{$service}
       if (defined $domain
       and defined $node
       and defined $service
-      and defined $conf->{domain}->{$domain}->{node}->{$node}->{client}
-      ->{$service} );
+      and defined $nconf->{client}->{$service} );
     return $conf->{domain}->{$domain}->{node}->{$node}
       if (defined $domain
       and defined $node
