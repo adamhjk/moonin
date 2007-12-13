@@ -222,6 +222,8 @@ sub get_graph_categories {
   my $domain = shift;
   my $name   = shift;
 
+  return [] unless $self->store->get("node-$domain-$name");
+  
   my $clients = $self->store->get("node-$domain-$name")->{client};
 
   my @graph_categories;
