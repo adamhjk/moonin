@@ -330,8 +330,8 @@ sub _get_header {
 
 sub process_all {
   my ($self) = @_;
-  foreach my $service ( keys( %{ $self->node->get_node_config->{client} } ) )
-  {
+  foreach my $service (
+    sort ( keys( %{ $self->node->get_node_config->{client} } ) ) ) {
     $self->logger->debug("Graphing $service");
     $self->process($service);
   }
@@ -339,8 +339,8 @@ sub process_all {
 
 sub pre_process_all {
   my ($self) = @_;
-  foreach my $service ( keys( %{ $self->node->get_node_config->{client} } ) )
-  {
+  foreach my $service (
+    sort( keys( %{ $self->node->get_node_config->{client} } ) ) ) {
     $self->logger->debug("Pre-Processing $service");
     $self->pre_process($service);
   }
@@ -818,12 +818,9 @@ sub pre_process {
     my @complete = ();
     if ( $self->rrdkludge ) {
       push( @complete,
-        '--font',
-        'LEGEND:7:/Users/adam/src/sandbox/moonin/extra/VeraMono.ttf',
-        '--font',
-        'UNIT:7:/Users/adam/src/sandbox/moonin/extra/VeraMono.ttf',
-        '--font',
-        'AXIS:7:/Users/adam/src/sandbox/moonin/extra/VeraMono.ttf' );
+        '--font', 'LEGEND:7:' . $self->node->config->extrasdir . '/VeraMono.ttf',
+        '--font', 'UNIT:7:' . $self->node->config->extrasdir . '/VeraMono.ttf',
+        '--font', 'AXIS:7:' . $self->node->config->extrasdir . '/VeraMono.ttf' );
     }
 
     $self->log->debug("Processing $name -> $time");
@@ -1013,7 +1010,8 @@ sub process {
     foreach my $time ( keys %{ $self->sumtimes } ) {
       next unless ( $self->draw->{ "sum" . $time } );
       my $rrd_args =
-        $self->node->config->store->get( "graph-" . $domain . "-" . $name . "-"
+        $self->node->config->store->get(
+            "graph-" . $domain . "-" . $name . "-"
           . "$service" . "-sum-"
           . "$time" );
       if ($rrd_args) {

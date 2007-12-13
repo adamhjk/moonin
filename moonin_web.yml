@@ -1,2 +1,5 @@
 ---
 name: Moonin::Web
+"Model::Config":
+  args:
+    config_file: __path_to('conf/moonin.conf')__

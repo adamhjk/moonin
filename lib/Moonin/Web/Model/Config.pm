@@ -6,9 +6,6 @@ use base 'Catalyst::Model::Adaptor';
 
 __PACKAGE__->config( 
   class => "Moonin::Config",
-  args => {
-    config_file => "/srv/moonin/conf/moonin.conf"
-  }
 );
 
 
