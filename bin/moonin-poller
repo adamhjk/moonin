@@ -40,7 +40,7 @@ foreach my $domain_name ( keys( %{ $config->domain } ) ) {
 my $big_logger = Log::Log4perl->get_logger("Moonin");
 $cron->add_entry( "*/8 * * * *", \&graph );
 $big_logger->info("Starting Moonin Poller");
-if ($ARGV[0] eq "graph") {
+if (defined($ARGV[0]) && $ARGV[0] eq "graph") {
   &graph;
 } else {
   $cron->run;
