@@ -391,7 +391,7 @@ sub configure {
 sub get_node_config {
   my $self = shift;
   my $result = $self->config->store->get("node-" . $self->domain . "-" . $self->name);
-  return $result if $result
+  return $result if $result;
   return {};
 }
 
