@@ -41,9 +41,7 @@ sub dispatch {
   my $logger = Log::Log4perl->get_logger("Moonin");
   $logger->info("Fetching node $domain $node");
   $nodes->{$domain}->{$node}->{node}->process;
-  sleep(int(rand(60)));
-  $logger->info("Pre-Processing graphs for $domain $node");
-  $nodes->{$domain}->{$node}->{graph}->pre_process_all;
+
 }
 
 # Optionally, graph the results
@@ -51,9 +49,8 @@ sub graph {
   my $logger = Log::Log4perl->get_logger("Moonin");
   foreach my $domain ( keys( %{$nodes} ) ) {
     foreach my $node ( keys( %{ $nodes->{$domain} } ) ) {
-      $logger->info("Graphing node $domain $node");
-      $nodes->{$domain}->{$node}->{graph}->process_all;
-      $logger->info("Finished graphing node $domain $node");
+      $logger->info("Pre-Processing graphs for $domain $node");
+      $nodes->{$domain}->{$node}->{graph}->pre_process_all;
     }
   }
 }
@@ -73,6 +70,7 @@ foreach my $domain ( keys( %{ $config->domain } ) ) {
     $cron->add_entry( "*/5 * * * *", [ $domain, $node ] );
   }
 }
+$cron->add_entry("*/8 * * * * *", \&graph);
 
 $cron->run;
 
