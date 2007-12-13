@@ -19,6 +19,7 @@ use RRDs;
 use POSIX qw(strftime);
 use Digest::MD5;
 use Time::HiRes;
+use Data::Dump qw(dump);
 
 with 'MooseX::Role::Log4perl', 'Moonin::Role::Exception';
 
@@ -1005,6 +1006,7 @@ sub process {
 "Cannot find cached graph arguments for $domain, $name, $service, $time"
       );
     }
+    $self->log->debug(dump($rrd_args));
   }
   if ( $self->node->get_bool_val( $service, "graph_sums", 0 ) ) {
     foreach my $time ( keys %{ $self->sumtimes } ) {

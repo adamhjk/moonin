@@ -74,7 +74,7 @@ has 'legal' => (
       "tls_verify_certificate", "tls_verify_depth",
       "graph_data_size",        "colour",
       "graph_printf",           "ok",
-      "unknown"
+      "unknown",                "extrasdir"
     ];
   },
 );
@@ -117,8 +117,7 @@ sub BUILD {
     );
   }
 
-  $self->{store} =
-    Moonin::Config::Store->new( directory => $self->dbdir );
+  $self->{store} = Moonin::Config::Store->new( directory => $self->dbdir );
 
   # $self->log->debug(dump($self->config));
 }
@@ -132,13 +131,13 @@ sub get_domains {
 sub get_nodes {
   my $self   = shift;
   my $domain = shift;
-  my @result = sort( keys( %{ $self->domain->{ $domain }->{node} } ) );
+  my @result = sort( keys( %{ $self->domain->{$domain}->{node} } ) );
   return \@result;
 }
 
 sub get_all_graph_categories {
   my $self = shift;
-  
+
   my @results;
   my @keys = $self->store->keys;
   foreach my $key (@keys) {
@@ -146,10 +145,10 @@ sub get_all_graph_categories {
     my $clients = $self->store->get($key)->{client};
     foreach my $thing ( keys( %{$clients} ) ) {
       if ( exists $clients->{$thing}->{'graph_category'} ) {
-         my $gc = ucfirst($clients->{$thing}->{'graph_category'});
-         push( @results, $gc )
-           unless ( grep /^$gc$/, @results );
-       }
+        my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
+        push( @results, $gc )
+          unless ( grep /^$gc$/, @results );
+      }
     }
   }
   @results = sort(@results);
@@ -157,61 +156,78 @@ sub get_all_graph_categories {
 }
 
 sub get_all_graphs_by_category {
-  my $self = shift;
+  my $self     = shift;
   my $category = shift;
-  my $graph = shift;
-  
+  my $graph    = shift;
+
   my $graphs = {};
-  my @keys = $self->store->keys;
+  my @keys   = $self->store->keys;
   foreach my $node (@keys) {
     next if $node !~ /^node-(.+?)-(.+)$/;
     my $clients = $self->store->get($node)->{client};
     foreach my $thing ( keys( %{$clients} ) ) {
       if ( exists $clients->{$thing}->{'graph_category'} ) {
-        my $gc = ucfirst($clients->{$thing}->{'graph_category'});
-        if (defined $category) {
-          if ($gc eq $category) {
-            if (defined $graph) {
-              push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} }) if $graph eq $thing;
+        my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
+        if ( defined $category ) {
+          if ( $gc eq $category ) {
+            if ( defined $graph ) {
+              push(
+                @{ $graphs->{$gc} },
+                { name => $thing, data => $clients->{$thing} }
+              ) if $graph eq $thing;
 
             } else {
-              push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+              push(
+                @{ $graphs->{$gc} },
+                { name => $thing, data => $clients->{$thing} }
+              );
             }
           }
         } else {
-          push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+          push(
+            @{ $graphs->{$gc} },
+            { name => $thing, data => $clients->{$thing} }
+          );
         }
       }
     }
-    foreach my $key (keys(%{$graphs})) {
-      my @sorted = sort
-        { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
-        @{$graphs->{$key}};
+    foreach my $key ( keys( %{$graphs} ) ) {
+      my @sorted =
+        sort { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
+        @{ $graphs->{$key} };
       $graphs->{$key} = \@sorted;
-    }    
+    }
   }
   return $graphs;
 }
 
 sub get_all_nodes_by_graph {
-  my $self = shift;
+  my $self  = shift;
   my $graph = shift;
-  
+
   my $nodes = {};
-  my @keys = $self->store->keys;
+  my @keys  = $self->store->keys;
   foreach my $node (@keys) {
     next if $node !~ /^node-(.+?)-(.+)$/;
     my $domainname = $1;
-    my $nodename = $2;
-    my $clients = $self->store->get($node)->{client};
+    my $nodename   = $2;
+    my $clients    = $self->store->get($node)->{client};
     foreach my $client ( keys( %{$clients} ) ) {
-      push(@{$nodes->{$client}}, { domain => $domainname, node => $nodename, graph => $clients->{$client} }); 
+      push(
+        @{ $nodes->{$client} },
+        {
+          domain => $domainname,
+          node   => $nodename,
+          graph  => $clients->{$client}
+        }
+      );
     }
   }
-  foreach my $key (keys(%{$nodes})) {
-    my @sorted = sort
-      { $a->{client}->{$key}->{data}->{graph_title} cmp $b->{client}->{$key}->{data}->{graph_title} }
-      @{$nodes->{$key}};
+  foreach my $key ( keys( %{$nodes} ) ) {
+    my @sorted = sort {
+      $a->{client}->{$key}->{data}->{graph_title}
+        cmp $b->{client}->{$key}->{data}->{graph_title}
+    } @{ $nodes->{$key} };
     $nodes->{$key} = \@sorted;
   }
   return $nodes;
@@ -223,13 +239,13 @@ sub get_graph_categories {
   my $name   = shift;
 
   return [] unless $self->store->get("node-$domain-$name");
-  
+
   my $clients = $self->store->get("node-$domain-$name")->{client};
 
   my @graph_categories;
   foreach my $thing ( keys( %{$clients} ) ) {
     if ( exists $clients->{$thing}->{'graph_category'} ) {
-      my $gc = ucfirst($clients->{$thing}->{'graph_category'});
+      my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
       push( @graph_categories, $gc )
         unless ( grep /^$gc$/, @graph_categories );
     }
@@ -239,35 +255,44 @@ sub get_graph_categories {
 }
 
 sub get_graphs_by_category {
-  my $self = shift;
-  my $domain = shift;
-  my $name = shift;
+  my $self     = shift;
+  my $domain   = shift;
+  my $name     = shift;
   my $category = shift;
-  my $graph = shift;
-  
+  my $graph    = shift;
+
   my $clients = $self->store->get("node-$domain-$name")->{client};
-  my $graphs = {};
+  my $graphs  = {};
   foreach my $thing ( keys( %{$clients} ) ) {
     if ( exists $clients->{$thing}->{'graph_category'} ) {
-      my $gc = ucfirst($clients->{$thing}->{'graph_category'});
-      if (defined $category) {
-        if ($gc eq $category) {
-          if (defined $graph) {
-            push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} }) if $graph eq $thing;
-            
+      my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
+      if ( defined $category ) {
+        if ( $gc eq $category ) {
+          if ( defined $graph ) {
+            push(
+              @{ $graphs->{$gc} },
+              { name => $thing, data => $clients->{$thing} }
+            ) if $graph eq $thing;
+
           } else {
-            push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+            push(
+              @{ $graphs->{$gc} },
+              { name => $thing, data => $clients->{$thing} }
+            );
           }
         }
       } else {
-        push( @{$graphs->{$gc}}, { name => $thing, data => $clients->{$thing} });
+        push(
+          @{ $graphs->{$gc} },
+          { name => $thing, data => $clients->{$thing} }
+        );
       }
     }
   }
-  foreach my $key (keys(%{$graphs})) {
-    my @sorted = sort
-      { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
-      @{$graphs->{$key}};
+  foreach my $key ( keys( %{$graphs} ) ) {
+    my @sorted =
+      sort { $a->{data}->{graph_title} cmp $b->{data}->{graph_title} }
+      @{ $graphs->{$key} };
     $graphs->{$key} = \@sorted;
   }
   return $graphs;
@@ -356,8 +381,7 @@ sub _set_var_path {
       $hash->{domain}->{$dom}->{node}->{$host}->{client}->{ $sp[0] }
         ->{ $sp[1] } = $val;
     } elsif ( @sp == 1 ) {
-      $self->log->warn(
-        "Unknown option \"$sp[0]\" in \"$dom;$host:$sp[0]\".")
+      $self->log->warn("Unknown option \"$sp[0]\" in \"$dom;$host:$sp[0]\".")
         unless defined $self->legal_expanded->{ $sp[0] };
       $hash->{domain}->{$dom}->{node}->{$host}->{ $sp[0] } = $val;
     } else {
