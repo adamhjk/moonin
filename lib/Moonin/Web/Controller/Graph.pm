@@ -3,7 +3,6 @@ package Moonin::Web::Controller::Graph;
 use strict;
 use warnings;
 use base 'Catalyst::Controller';
-use Date::Manip;
 use IO::File;
 use POSIX qw(strftime);
 
