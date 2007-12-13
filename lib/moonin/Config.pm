@@ -342,19 +342,19 @@ sub _set_var_path {
     my @sp = split( /\./, $rest );
 
     if ( @sp == 3 ) {
-      $self->log->warning(
+      $self->log->warn(
         "Unknown option \"$sp[2]\" in \"$dom;$host:$sp[0].$sp[1].$sp[2]\".")
         unless defined $self->legal_expanded->{ $sp[2] };
       $hash->{domain}->{$dom}->{node}->{$host}->{client}->{ $sp[0] }
         ->{"$sp[1].$sp[2]"} = $val;
     } elsif ( @sp == 2 ) {
-      $self->log->warning(
+      $self->log->warn(
         "Unknown option \"$sp[1]\" in \"$dom;$host:$sp[0].$sp[1]\".")
         unless defined $self->legal_expanded->{ $sp[1] };
       $hash->{domain}->{$dom}->{node}->{$host}->{client}->{ $sp[0] }
         ->{ $sp[1] } = $val;
     } elsif ( @sp == 1 ) {
-      $self->log->warning(
+      $self->log->warn(
         "Unknown option \"$sp[0]\" in \"$dom;$host:$sp[0]\".")
         unless defined $self->legal_expanded->{ $sp[0] };
       $hash->{domain}->{$dom}->{node}->{$host}->{ $sp[0] } = $val;
@@ -366,20 +366,20 @@ sub _set_var_path {
     my @sp = split( /\./, $rest );
 
     if ( @sp == 1 ) {
-      $self->log->warning("Unknown option \"$sp[0]\" in \"$dom;$sp[0]\".")
+      $self->log->warn("Unknown option \"$sp[0]\" in \"$dom;$sp[0]\".")
         unless defined $self->legal_expanded->{ $sp[0] };
       $hash->{domain}->{$dom}->{ $sp[0] } = $val;
     } else {
       warn "_set_var: Malformatted variable path \"$var\".";
     }
   } elsif ( $var =~ /^\s*([^;:\.]+)\s*$/ ) {
-    $self->log->warning("Unknown option \"$1\" in \"$1\".")
+    $self->log->warn("Unknown option \"$1\" in \"$1\".")
       unless defined $self->legal_expanded->{$1};
     $hash->{$1} = $val;
   } elsif ( $var =~ /^\s*([^\.]+)\.([^\.]+)\.([^\.]+)$/ ) {
-    $self->log->warning("Unknown option \"$1\" in \"$var\".")
+    $self->log->warn("Unknown option \"$1\" in \"$var\".")
       unless defined $self->legal_expanded->{$1};
-    $self->log->warning("Unknown option \"$3\" in \"$var\".")
+    $self->log->warn("Unknown option \"$3\" in \"$var\".")
       unless defined $self->legal_expanded->{$3};
     $hash->{$1}->{$2}->{$3} = $val;
   } else {

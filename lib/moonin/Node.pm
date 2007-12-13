@@ -143,7 +143,7 @@ sub fetch {
     for (@lines) {
       next unless defined $_;
       if (/\# timeout/) {
-        $self->log->warning(
+        $self->log->warn(
           "Client reported timeout in fetching of $service");
       } elsif (/(\w+)\.value\s+(\S+)\s*(\#.*)?$/) {
         my $key     = $1;
@@ -282,10 +282,10 @@ sub configure {
     next   unless (@lines);
     for (@lines) {
       if (/\# timeout/) {
-        $self->log->warning(
+        $self->log->warn(
           "Client reported timeout in configuration of $servname");
         if ( $oldnode->{client}->{$servname} ) {
-          $self->log->warning("Attempting to use old configuration");
+          $self->log->warn("Attempting to use old configuration");
           $self->config->domain->{$domain}->{node}->{$name}->{client}
             ->{$servname} = $oldnode->{client}->{$servname};
         } else {
@@ -835,7 +835,7 @@ sub _read_socket {
     alarm 0;
   };
   if ($timed_out) {
-    $self->log->warning("Socket read timed out: $@\n");
+    $self->log->warn("Socket read timed out: $@\n");
     return undef;
   }
   $self->log->debug(
@@ -864,7 +864,7 @@ sub _read_socket_single {
     alarm 0;
   };
   if ($timed_out) {
-    $self->log->warning("Socket read timed out: $@\n");
+    $self->log->warn("Socket read timed out: $@\n");
     return undef;
   }
   $self->log->debug("[DEBUG] Reading from socket: \"$res\".");
