@@ -14,6 +14,9 @@ requires 'Time::HiRes';
 requires 'Digest::MD5';
 requires 'Data::Dump';
 requires 'Catalyst::View::TT';
+requires 'Cache::FileCache';
+requires 'Schedule::Cron';
+requires 'Catalyst::Model::Adaptor';
 
 requires 'YAML'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats

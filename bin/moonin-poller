@@ -22,9 +22,27 @@ log4perl.appender.Screen.layout.ConversionPattern=[%d] [%C (%L)] [%p] %m%n
             );
 Log::Log4perl::init( \$conf );
 
-my $nodes = {};
+my $config =
+  Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
 
-srand;
+my $cron = Schedule::Cron->new(
+  \&dispatch,
+  log           => \&log_method,
+  processprefix => "Moonin"
+);
+foreach my $domain_name ( keys( %{ $config->domain } ) ) {
+  foreach
+    my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
+    $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
+  }
+}
+
+my $big_logger = Log::Log4perl->get_logger("Moonin");
+$cron->add_entry( "*/8 * * * *", \&graph );
+$big_logger->info("Starting Moonin Poller");
+$cron->run;
+
+exit 0;
 
 sub log_method {
   my ( $level, $msg ) = @_;
@@ -36,42 +54,34 @@ sub log_method {
 
 # First, poll the nodes
 sub dispatch {
-  my ( $domain, $node, $type ) = @_;
+  my ( $domain_name, $node_name, $type ) = @_;
+
+  my $node = Moonin::Node->new(
+    domain => $domain_name,
+    name   => $node_name,
+    config => $config,
+  );
 
   my $logger = Log::Log4perl->get_logger("Moonin");
-  $logger->info("Fetching node $domain $node");
-  $nodes->{$domain}->{$node}->{node}->process;
-
+  $logger->info("Fetching node $domain_name $node_name");
+  $node->process;
 }
 
 # Optionally, graph the results
 sub graph {
   my $logger = Log::Log4perl->get_logger("Moonin");
-  foreach my $domain ( keys( %{$nodes} ) ) {
-    foreach my $node ( keys( %{ $nodes->{$domain} } ) ) {
+  foreach my $domain ( keys( %{ $config->domain } ) ) {
+    foreach my $node ( keys( %{ $config->domain->{$domain}->{node} } ) ) {
       $logger->info("Pre-Processing graphs for $domain $node");
-      $nodes->{$domain}->{$node}->{graph}->pre_process_all;
+      my $node = Moonin::Node->new(
+        domain => $domain,
+        name   => $node,
+        config => $config,
+      );
+      my $graph = Moonin::Graph->new( node => $node );
+      $graph->pre_process_all;
     }
   }
 }
 
-my $config =
-  Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
-my $cron = Schedule::Cron->new( \&dispatch, log => \&log_method );
-foreach my $domain ( keys( %{ $config->domain } ) ) {
-  foreach my $node ( keys( %{ $config->domain->{$domain}->{node} } ) ) {
-    $nodes->{$domain}->{$node}->{node} = Moonin::Node->new(
-      domain => $domain,
-      name   => $node,
-      config => $config,
-    );
-    $nodes->{$domain}->{$node}->{graph} =
-      Moonin::Graph->new( node => $nodes->{$domain}->{$node}->{node} );
-    $cron->add_entry( "*/5 * * * *", [ $domain, $node ] );
-  }
-}
-$cron->add_entry("*/8 * * * * *", \&graph);
-
-$cron->run;
-
-exit 0;
+1;
