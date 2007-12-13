@@ -390,7 +390,9 @@ sub configure {
 
 sub get_node_config {
   my $self = shift;
-  return $self->config->store->get("node-" . $self->domain . "-" . $self->name);
+  my $result = $self->config->store->get("node-" . $self->domain . "-" . $self->name);
+  return $result if $result
+  return {};
 }
 
 sub get_field_order {
