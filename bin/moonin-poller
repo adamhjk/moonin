@@ -71,11 +71,11 @@ sub dispatch {
 sub graph {
   my $logger = Log::Log4perl->get_logger("Moonin");
   foreach my $domain ( keys( %{ $config->domain } ) ) {
-    foreach my $node ( keys( %{ $config->domain->{$domain}->{node} } ) ) {
+    foreach my $node_name ( keys( %{ $config->domain->{$domain}->{node} } ) ) {
       $logger->info("Pre-Processing graphs for $domain $node");
       my $node = Moonin::Node->new(
         domain => $domain,
-        name   => $node,
+        name   => $node_name,
         config => $config,
       );
       my $graph = Moonin::Graph->new( node => $node );
