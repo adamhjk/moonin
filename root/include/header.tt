@@ -23,8 +23,6 @@
     </div>
     <div id="search">
         <a href="[% c.uri_for('/node') %]">By Node</a>
-        |
-        <a href="[% c.uri_for('/category') %]">By Category</a>
     </div>
 </div>
 <div id="content">

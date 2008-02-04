@@ -7,7 +7,7 @@ use warnings;
 
 use FindBin;
 use lib ("$FindBin::Bin/../lib");
-use Parallel::ForkManager;
+use Schedule::Cron;
 use Moonin::Config;
 use Moonin::Node;
 use Moonin::Graph;
@@ -25,26 +25,19 @@ Log::Log4perl::init( \$conf );
 my $config =
   Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
 
-my $pm = Parallel::ForkManager(50);
-my @dispatch = ();
-my $big_logger = Log::Log4perl->get_logger("Moonin");
+my $cron = Schedule::Cron->new(
+  \&dispatch,
+  log           => \&log_method,
+  processprefix => "Moonin"
+);
 foreach my $domain_name ( keys( %{ $config->domain } ) ) {
   foreach
     my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
-    $big_logger->debug("Adding $domain_name, $node_name to dispatch list");
-    push(@dispatch, [ $domain_name, $node_name ]);
+    $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
   }
 }
 
-
-foreach my $client (@dispatch) {
-  my $pid = $pm->start and next;
-  &dispatch($client[0], $client[1]);
-  $pm->finish;
-}
-$pm->wait_all_children;
-
-
+my $big_logger = Log::Log4perl->get_logger("Moonin");
 $cron->add_entry( "*/8 * * * *", \&graph );
 $big_logger->info("Starting Moonin Poller");
 if (defined($ARGV[0]) && $ARGV[0] eq "graph") {
