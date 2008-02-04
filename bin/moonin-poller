@@ -7,7 +7,9 @@ use warnings;
 
 use FindBin;
 use lib ("$FindBin::Bin/../lib");
+
 use Schedule::Cron;
+$SIG{'HUP'} = 'sig_hup';
 use Moonin::Config;
 use Moonin::Node;
 use Moonin::Graph;
@@ -22,31 +24,80 @@ log4perl.appender.Screen.layout.ConversionPattern=[%d] [%C (%L)] [%p] %m%n
             );
 Log::Log4perl::init( \$conf );
 
-my $config =
-  Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
-
-my $cron = Schedule::Cron->new(
+my $config;
+my $cron       = Schedule::Cron->new(
   \&dispatch,
   log           => \&log_method,
   processprefix => "Moonin"
 );
-foreach my $domain_name ( keys( %{ $config->domain } ) ) {
-  foreach
-    my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
-    $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
-  }
-}
 
 my $big_logger = Log::Log4perl->get_logger("Moonin");
-$cron->add_entry( "*/8 * * * *", \&graph );
 $big_logger->info("Starting Moonin Poller");
-if (defined($ARGV[0]) && $ARGV[0] eq "graph") {
+&load_config();
+$cron->add_entry( "*/8 * * * *", \&graph );
+if ( defined( $ARGV[0] ) && $ARGV[0] eq "graph" ) {
   &graph;
 } else {
   $cron->run;
 }
 
 exit 0;
+
+sub sig_hup {
+  my $logger = Log::Log4perl->get_logger("Moonin");
+  $logger->info("Recieved SIGHUP, reloading configuration");
+  &load_config;
+}
+
+sub load_config {
+  my $logger = Log::Log4perl->get_logger("Moonin");
+  $config = Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
+  my %seen_nodes = ();
+  my @current_entries = $cron->list_entries;
+  foreach my $domain_name ( keys( %{ $config->domain } ) ) {
+    foreach
+      my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
+      my $idx = find_entry_idx($domain_name, $node_name);
+      my $seenit = "$domain_name-$node_name";
+      if (! defined($idx)) {
+        $logger->info("Adding $domain_name $node_name to polling");
+        $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
+      }
+      $seen_nodes{$seenit} = 1; 
+    }
+  }
+  foreach my $entry ($cron->list_entries) {
+    next unless $entry->{time} eq "*/5 * * * *";
+    my $entry_domain = $entry->{args}->[0];
+    my $entry_node = $entry->{args}->[1];
+    my $seenit = "$entry_domain-$entry_node";
+    if (! exists($seen_nodes{$seenit})) {
+      $logger->info("Removing $entry_domain $entry_node from poller");
+      delete_entry($entry_domain, $entry_node);
+    }
+  }
+}
+
+sub delete_entry {
+  my $entry_domain = shift;
+  my $entry_node = shift;
+  my $idx = find_entry_idx($entry_domain, $entry_node);
+  $cron->delete_entry($idx);
+}
+
+sub find_entry_idx {
+  my $domain_name = shift;
+  my $node_name = shift;
+  my @current_entries = $cron->list_entries;
+  for (my $x = 0; $x < scalar(@current_entries); $x++) {
+    my $entry = $current_entries[$x];
+    next unless $entry->{time} eq "*/5 * * * *";
+    if ($entry->{args}->[0] eq $domain_name && $entry->{args}->[1] eq $node_name) {
+      return $x;
+    }
+  }
+  return undef;
+}
 
 sub log_method {
   my ( $level, $msg ) = @_;
@@ -75,7 +126,8 @@ sub dispatch {
 sub graph {
   my $logger = Log::Log4perl->get_logger("Moonin");
   foreach my $domain ( keys( %{ $config->domain } ) ) {
-    foreach my $node_name ( keys( %{ $config->domain->{$domain}->{node} } ) ) {
+    foreach my $node_name ( keys( %{ $config->domain->{$domain}->{node} } ) )
+    {
       $logger->info("Pre-Processing graphs for $domain $node_name");
       my $node = Moonin::Node->new(
         domain => $domain,
