@@ -5,6 +5,7 @@ use warnings;
 use base 'Catalyst::Controller';
 use IO::File;
 use POSIX qw(strftime);
+use File::Basename;
 
 =head1 NAME
 
@@ -44,6 +45,7 @@ sub draw : Regex('graph/(.+?)/(.+?)/(.+?)/(.+).png') {
   my $time   = time;
   my $filename =
     $self->get_picture_filename( $c, $domain, $name, $service, $scale );
+
   if ( -f $filename ) {
     my $current_time = time;
     my @file_stats = stat($filename);
@@ -105,7 +107,12 @@ sub get_picture_filename {
   my $service = shift;
   my $scale   = shift;
 
-  return $c->model("Config")->htmldir . "/$domain/$name-$service-$scale.png";
+  my $directory = $c->model("Config")->htmldir . "/$domain";
+  unless ( -d $directory ) {
+    system("mkdir -p $directory");
+  }
+
+  return "$domain/$name-$service-$scale.png";
 }
 
 =head1 AUTHOR
