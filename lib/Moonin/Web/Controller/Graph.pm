@@ -112,7 +112,7 @@ sub get_picture_filename {
     system("mkdir -p $directory");
   }
 
-  return "$domain/$name-$service-$scale.png";
+  return "$directory/$name-$service-$scale.png";
 }
 
 =head1 AUTHOR
