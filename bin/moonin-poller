@@ -52,28 +52,30 @@ sub sig_hup {
 sub load_config {
   my $logger = Log::Log4perl->get_logger("Moonin");
   $config = Moonin::Config->new( config_file => "$FindBin::Bin/../conf/moonin.conf" );
-  my %seen_nodes = ();
-  my @current_entries = $cron->list_entries;
-  foreach my $domain_name ( keys( %{ $config->domain } ) ) {
-    foreach
-      my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
-      my $idx = find_entry_idx($domain_name, $node_name);
-      my $seenit = "$domain_name-$node_name";
-      if (! defined($idx)) {
-        $logger->info("Adding $domain_name $node_name to polling");
-        $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
+  unless ($ARGV[0] eq "graph") {
+    my %seen_nodes = ();
+    my @current_entries = $cron->list_entries;
+    foreach my $domain_name ( keys( %{ $config->domain } ) ) {
+      foreach
+        my $node_name ( keys( %{ $config->domain->{$domain_name}->{node} } ) ) {
+        my $idx = find_entry_idx($domain_name, $node_name);
+        my $seenit = "$domain_name-$node_name";
+        if (! defined($idx)) {
+          $logger->info("Adding $domain_name $node_name to polling");
+          $cron->add_entry( "*/5 * * * *", [ $domain_name, $node_name ] );
+        }
+        $seen_nodes{$seenit} = 1; 
       }
-      $seen_nodes{$seenit} = 1; 
     }
-  }
-  foreach my $entry ($cron->list_entries) {
-    next unless $entry->{time} eq "*/5 * * * *";
-    my $entry_domain = $entry->{args}->[0];
-    my $entry_node = $entry->{args}->[1];
-    my $seenit = "$entry_domain-$entry_node";
-    if (! exists($seen_nodes{$seenit})) {
-      $logger->info("Removing $entry_domain $entry_node from poller");
-      delete_entry($entry_domain, $entry_node);
+    foreach my $entry ($cron->list_entries) {
+      next unless $entry->{time} =~ /^\*\/5 \* \* \* \*/;
+      my $entry_domain = $entry->{args}->[0];
+      my $entry_node = $entry->{args}->[1];
+      my $seenit = "$entry_domain-$entry_node";
+      if (! exists($seen_nodes{$seenit})) {
+        $logger->info("Removing $entry_domain $entry_node from poller");
+        delete_entry($entry_domain, $entry_node);
+      }
     }
   }
 }
@@ -118,7 +120,10 @@ sub dispatch {
   );
 
   my $logger = Log::Log4perl->get_logger("Moonin");
-  $logger->info("Fetching node $domain_name $node_name");
+  my $sleep = int(rand(180));
+  $logger->info("Fetching node $domain_name $node_name in $sleep seconds");
+  sleep $sleep;
+  $logger->info("Fetching node $domain_name $node_name now");
   $node->process;
 }
 
@@ -136,6 +141,7 @@ sub graph {
       );
       my $graph = Moonin::Graph->new( node => $node );
       $graph->pre_process_all;
+      sleep 5;
     }
   }
 }
