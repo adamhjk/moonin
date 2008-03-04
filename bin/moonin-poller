@@ -34,7 +34,7 @@ my $cron       = Schedule::Cron->new(
 my $big_logger = Log::Log4perl->get_logger("Moonin");
 $big_logger->info("Starting Moonin Poller");
 &load_config();
-$cron->add_entry( "*/8 * * * *", \&graph );
+$cron->add_entry( "10 */1 * * *", \&graph );
 if ( defined( $ARGV[0] ) && $ARGV[0] eq "graph" ) {
   &graph;
 } else {
