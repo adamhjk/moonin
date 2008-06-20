@@ -48,7 +48,13 @@ sub get {
 sub exists {
   my $self = shift;
   my $key = shift;
-  return grep(/^$key$/, $self->cache->get_keys);
+  eval { $self->cache->get($key) }
+  my $e;
+  if ($e = Exception::Class->caught()) {
+    return 0;
+  } else {
+    return 1;
+  }
 }
 
 sub remove {
