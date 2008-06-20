@@ -244,7 +244,7 @@ sub get_graph_categories {
   } else {
     if ( exists $self->config->{'domain'}->{$domain} ) {
       if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
-        my $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name};
+        $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name}->{'client'};
       }
     }
   }
@@ -274,7 +274,7 @@ sub get_graphs_by_category {
   } else {
     if ( exists $self->config->{'domain'}->{$domain} ) {
       if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
-        $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name};
+        $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name}->{client};
       }
     }
   }
