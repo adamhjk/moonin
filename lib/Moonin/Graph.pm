@@ -366,9 +366,9 @@ sub pre_process {
 
   # Make my graphs
   $self->log->debug("Generating Graphs for $name service $service");
-  $self->log_exception( 'InvalidArgument',
-    "Service $service must exist for $node!" )
-    unless exists( $node->{client}->{$service} );
+  #$self->log_exception( 'InvalidArgument',
+  #  "Service $service must exist for $node!" )
+  #  unless exists( $node->{client}->{$service} );
 
   my $service_time = Time::HiRes::time;
   my $lastupdate   = 0;

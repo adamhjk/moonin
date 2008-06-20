@@ -48,7 +48,7 @@ sub get {
 sub exists {
   my $self = shift;
   my $key = shift;
-  eval { $self->cache->get($key) }
+  eval { $self->cache->get($key) };
   my $e;
   if ($e = Exception::Class->caught()) {
     return 0;

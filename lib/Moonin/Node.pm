@@ -394,9 +394,10 @@ sub get_node_config {
   if ($self->config->store->exists("node-" . $self->domain . "-" . $self->name)) {
     return $self->config->store->get("node-" . $self->domain . "-" . $self->name);
   } else {
-    if ( exists $self->config->{'domain'}->{$domain} ) {
-      if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
-        return $self->config->{'domain'}->{$domain}->{'node'}->{$name};
+    if ( exists $self->config->{'domain'}->{$self->domain} ) {
+      if ( exists $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name} ) {
+        $self->log->debug(Data::Dumper->Dump([ $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name} ]))
+        return $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name};
       }
     }
   }
