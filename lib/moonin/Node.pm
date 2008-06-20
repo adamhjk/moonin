@@ -390,8 +390,17 @@ sub configure {
 
 sub get_node_config {
   my $self = shift;
-  my $result = $self->config->store->get("node-" . $self->domain . "-" . $self->name);
-  return $result if $result;
+  my $result;
+  if ($self->config->store->exists("node-" . $self->domain . "-" . $self->name)) {
+    return $self->config->store->get("node-" . $self->domain . "-" . $self->name);
+  } else {
+    if ( exists $self->config->{'domain'}->{$domain} ) {
+      if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
+        return $self->config->{'domain'}->{$domain}->{'node'}->{$name};
+      }
+    }
+  }
+  $self->log->info("No node config returned!");
   return {};
 }
 
