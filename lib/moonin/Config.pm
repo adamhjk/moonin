@@ -238,37 +238,26 @@ sub get_graph_categories {
   my $domain = shift;
   my $name   = shift;
 
+  my $clients;
   if ($self->store->exists("node-$domain-$name")) {
-    my $clients = $self->store->get("node-$domain-$name")->{client};
-
-    my @graph_categories;
-    foreach my $thing ( keys( %{$clients} ) ) {
-      if ( exists $clients->{$thing}->{'graph_category'} ) {
-        my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
-        push( @graph_categories, $gc )
-          unless ( grep /^$gc$/, @graph_categories );
-      }
-    }
-    @graph_categories = sort(@graph_categories);
-    return \@graph_categories;
+    $clients = $self->store->get("node-$domain-$name")->{client};
   } else {
     if ( exists $self->config->{'domain'}->{$domain} ) {
       if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
         my $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name};
-        my @graph_categories;
-        foreach my $thing ( keys ( %{$clients} ) ) ) {
-          if ( exists $clients->{$thing}->{'graph_category'} ) {
-            my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
-            push( @graph_categories, $gc )
-              unless ( grep /^$gc$/, @graph_categories );
-          }
-        }
-        @graph_categories = sort(@graph_categories);
-        return \@graph_categories; 
       }
     }
-    return [];
   }
+  my @graph_categories;
+  foreach my $thing ( keys( %{$clients} ) ) {
+    if ( exists $clients->{$thing}->{'graph_category'} ) {
+      my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
+      push( @graph_categories, $gc )
+        unless ( grep /^$gc$/, @graph_categories );
+    }
+  }
+  @graph_categories = sort(@graph_categories);
+  return \@graph_categories;
 }
 
 sub get_graphs_by_category {
@@ -278,8 +267,17 @@ sub get_graphs_by_category {
   my $category = shift;
   my $graph    = shift;
 
-  my $clients = $self->store->get("node-$domain-$name")->{client};
   my $graphs  = {};
+  my $clients;
+  if ($self->store->exists("node-$domain-$name")) {
+    $clients = $self->store->get("node-$domain-$name")->{client};
+  } else {
+    if ( exists $self->config->{'domain'}->{$domain} ) {
+      if ( exists $self->config->{'domain'}->{$domain}->{'node'}->{$name} ) {
+        $clients = $self->config->{'domain'}->{$domain}->{'node'}->{$name};
+      }
+    }
+  }
   foreach my $thing ( keys( %{$clients} ) ) {
     if ( exists $clients->{$thing}->{'graph_category'} ) {
       my $gc = ucfirst( $clients->{$thing}->{'graph_category'} );
