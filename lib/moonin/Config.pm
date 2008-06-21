@@ -450,9 +450,9 @@ sub get {
   if ($self->store->get("node-" . $domain . "-" . $node)) {
     $nconf = $self->store->get("node-" . $domain . "-" . $node);
   } else {
-    if ( exists $conf->{'config'}->{'domain'} ) {
-      if ( exists $conf->{'config'}->{'domain'}->{$domain}->{'node'}->{$node} ) {
-        $nconf = $self->config->{'config'}->{'domain'}->{$self->domain}->{'node'}->{$self->name};
+    if ( exists $conf->{'domain'} ) {
+      if ( exists $conf->{'domain'}->{$domain}->{'node'}->{$node} ) {
+        $nconf = $conf->{'domain'}->{$self->domain}->{'node'}->{$self->name};
       }
     }
   }
