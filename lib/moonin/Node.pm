@@ -652,7 +652,7 @@ sub single_value {
   if ( !defined $node->{client}->{$service}->{"graphable"} ) {
 
     #	foreach my $field (keys %{$node->{client}->{$service}})
-    foreach my $field ( $self->get_field_order($service) ) {
+    foreach my $field ( @{$self->get_field_order($service)} ) {
       $self->log->debug("single_value: Checking field \"$field\".\n");
       if ( $field =~ /^([^\.]+)\.label/ or $field =~ /=/ ) {
         $graphable++ if $self->draw_field( $service, $1 );

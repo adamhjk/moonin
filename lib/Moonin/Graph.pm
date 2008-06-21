@@ -431,6 +431,8 @@ sub pre_process {
   $rrdscale = '%s'
     if $self->node->get_bool_val( $service, 'graph_scale', 1 );
 
+  $self->log->debug(dump($node->{client}->{$service}));
+  
   # Array to keep negative data until we're finished with positive.
   my @rrd_negatives = ();
   my $filename      = "unknown";

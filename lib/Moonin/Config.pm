@@ -445,7 +445,17 @@ sub get {
   my $service = shift;
   my $plot    = shift;
   my $conf    = $self->config;
-  my $nconf = $self->store->get("node-" . $domain . "-" . $node);
+  my $nconf;
+  
+  if ($self->store->get("node-" . $domain . "-" . $node)) {
+    $nconf = $self->store->get("node-" . $domain . "-" . $node);
+  } else {
+    if ( exists $conf->{'config'}->{'domain'} ) {
+      if ( exists $conf->{'config'}->{'domain'}->{$domain}->{'node'}->{$node} ) {
+        $nconf = $self->config->{'config'}->{'domain'}->{$self->domain}->{'node'}->{$self->name};
+      }
+    }
+  }
   
   if ( defined $field ) {
     return $nconf->{client}->{$service}
