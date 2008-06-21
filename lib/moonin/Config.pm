@@ -452,7 +452,7 @@ sub get {
   } else {
     if ( exists $conf->{'domain'} ) {
       if ( exists $conf->{'domain'}->{$domain}->{'node'}->{$node} ) {
-        $nconf = $conf->{'domain'}->{$self->domain}->{'node'}->{$self->name};
+        $nconf = $conf->{'domain'}->{$domain}->{'node'}->{$node};
       }
     }
   }
