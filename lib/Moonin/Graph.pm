@@ -987,9 +987,9 @@ sub process {
 
   # Make my graphs
   $self->log->debug("Drawing Graphs for $name service $service");
-  $self->log_exception( 'InvalidArgument',
-    "Service $service must exist for $node!" )
-    unless exists( $node->{client}->{$service} );
+  #$self->log_exception( 'InvalidArgument',
+  #  "Service $service must exist for $node!" )
+  #  unless exists( $node->{client}->{$service} );
 
   foreach my $time ( keys(%times) ) {
     my $rrd_args =
