@@ -32,7 +32,7 @@ has 'limit_services' => ( is => 'rw', required => 0, default => undef );
 has 'copy_fields' => (
   is       => 'rw',
   required => 0,
-  defualt =>
+  default =>
     sub { [ "label", "draw", "type", "rrdfile", "fieldname", "info" ] }
 );
 
@@ -391,13 +391,14 @@ sub configure {
 sub get_node_config {
   my $self = shift;
   my $result;
-  if ($self->config->store->exists("node-" . $self->domain . "-" . $self->name)) {
+  if ($self->config->store->get("node-" . $self->domain . "-" . $self->name)) {
+    $self->log->debug("banky " . Data::Dumper->Dump([ $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name} ]));
     return $self->config->store->get("node-" . $self->domain . "-" . $self->name);
   } else {
-    if ( exists $self->config->{'domain'}->{$self->domain} ) {
-      if ( exists $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name} ) {
-        $self->log->debug(Data::Dumper->Dump([ $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name} ]))
-        return $self->config->{'domain'}->{$self->domain}->{'node'}->{$self->name};
+    if ( exists $self->config->{'config'}->{'domain'} ) {
+      if ( exists $self->config->{'config'}->{'domain'}->{$self->domain}->{'node'}->{$self->name} ) {
+        $self->log->debug(Data::Dumper->Dump([ $self->config->{'config'}->{'domain'}->{$self->domain}->{'node'}->{$self->name} ]));
+        return $self->config->{'config'}->{'domain'}->{$self->domain}->{'node'}->{$self->name};
       }
     }
   }
@@ -543,13 +544,14 @@ sub get_sum_command {
 sub get_filename {
   my $self    = shift;
   my $config  = $self->config;
-  my $domain  = $self->domain;
+  my $domain  = shift; # $self->domain;
+  my $name    = shift;
   my $node    = $self->get_node_config;
   my $service = shift;
   my $field   = shift;
 
   return (
-    $config->dbdir . "/$domain/" . $self->name . "-$service-$field-"
+    $config->dbdir . "/$domain/$name-$service-$field-"
       . lc substr(
       ( $node->{client}->{$service}->{ $field . ".type" } || "GAUGE" ),
       0, 1 )
@@ -578,7 +580,7 @@ sub get_rrd_filename {
     }
 
     if ( $path =~ /^\s*([^:;]+)[:;]([^:]+):([^:\.]+)[:\.]([^:\.]+)\s*$/ ) {
-      $result = $self->get_filename( $config, $3, $4 );
+      $result = $self->get_filename( $1, $2, $3, $4 );
       $self->log->debug("Expanding $path...\n");
       if ( !defined $node->{client}->{$service}->{ $field . "label" } ) {
         for my $f ( @{ $self->copy_fields } ) {
@@ -594,7 +596,7 @@ sub get_rrd_filename {
       }
     } elsif ( $path =~ /^\s*([^:]+):([^:\.]+)[:\.]([^:\.]+)\s*$/ ) {
       $self->log->debug("Expanding $path...\n");
-      $result = $self->get_filename( $2, $3 );
+      $result = $self->get_filename( $self->domain, $1, $2, $3 );
       for my $f ( @{ $self->copy_fields } ) {
         if ( not exists $node->{client}->{$service}->{"$field.$f"}
           and
@@ -608,7 +610,7 @@ sub get_rrd_filename {
       }
     } elsif ( $path =~ /^\s*([^:\.]+)[:\.]([^:\.]+)\s*$/ ) {
       $self->log->debug("Expanding $path...\n");
-      $result = $self->get_filename( $1, $2 );
+      $result = $self->get_filename( $self->domain, $self->name, $1, $2 );
       for my $f ( @{ $self->copy_fields } ) {
         if ( not exists $node->{client}->{$service}->{"$field.$f"}
           and exists $node->{client}->{$1}->{"$2.$f"} ) {
@@ -618,7 +620,7 @@ sub get_rrd_filename {
       }
     } elsif ( $path =~ /^\s*([^:\.]+)\s*$/ ) {
       $self->log->debug("Expanding $path...\n");
-      $result = $self->get_filename( $service, $1 );
+      $result = $self->get_filename( $self->domain, $self->name, $service, $1 );
       for my $f ( @{ $self->copy_fields } ) {
         if ( not exists $node->{client}->{$service}->{"$field.$f"}
           and exists $node->{client}->{$service}->{"$1.$f"} ) {
@@ -629,7 +631,7 @@ sub get_rrd_filename {
     }
   } else {
     $self->log->debug("\nDEBUG5: Doing path...\n");
-    $result = $self->get_filename( $service, $field );
+    $result = $self->get_filename( $self->domain, $self->name, $service, $field );
   }
   return $result;
 }

@@ -239,7 +239,7 @@ sub get_graph_categories {
   my $name   = shift;
 
   my $clients;
-  if ($self->store->exists("node-$domain-$name")) {
+  if ($self->store->get("node-$domain-$name")) {
     $clients = $self->store->get("node-$domain-$name")->{client};
   } else {
     if ( exists $self->config->{'domain'}->{$domain} ) {
@@ -269,7 +269,7 @@ sub get_graphs_by_category {
 
   my $graphs  = {};
   my $clients;
-  if ($self->store->exists("node-$domain-$name")) {
+  if ($self->store->get("node-$domain-$name")) {
     $clients = $self->store->get("node-$domain-$name")->{client};
   } else {
     if ( exists $self->config->{'domain'}->{$domain} ) {
